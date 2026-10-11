@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{site.fullName}} · Cave & bar à bières en Brière, location de tireuses</title>
+  <meta name="description" content="Cave & bar à bières à Herbignac, en Brière : des bières à découvrir, des amis à retrouver et la location de tireuses pour vos événements. 21 avenue de la Monneraye (RD33).">
+  <!-- TODO(cabane): final domain → update canonical/og:url, then drop noindex here and in vercel.json. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="{{site.url}}/">
+  <meta name="theme-color" content="#EF7A18">
+  <meta name="color-scheme" content="light">
+  <link rel="preload" href="/fonts/fraunces-black-soft-v1.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="{{site.fullName}}">
+  <meta property="og:title" content="{{site.name}} · Ça mousse. Ça vit.">
+  <meta property="og:description" content="Cave & bar à bières à Herbignac, en Brière. Location de tireuses pour vos événements.">
+  <meta property="og:url" content="{{site.url}}/">
+  <meta property="og:image" content="{{site.url}}/og-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    // Motion bootstrap: the scroll pour needs JS and no reduced-motion preference.
+    // If the bundle has not confirmed within 4 s, fall back to the static final scene.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('hero-motion');
+        setTimeout(function () { if (!window.__cabaneReady) d.classList.remove('hero-motion'); }, 4000);
+      }
+    })();
+  </script>
+  <script type="module" src="/src/main.js"></script>
+  <script type="application/ld+json">{{jsonLd}}</script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9.2 3l1.7 4.3-2.2 1.6a12 12 0 0 0 6.4 6.4l1.6-2.2 4.3 1.7-.5 2.6c-.2 1-1.1 1.6-2.1 1.6C10.4 19 5 13.6 5 5.6c0-1 .6-1.9 1.6-2.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 1 1 13 0C18.5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.8" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16 16.5 7.5M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 48 48"><path d="M8 30 18 22M14 41l12-5M22 15 26 4" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__bar">
+      <a class="brand" href="#top" aria-label="{{site.name}}, retour en haut de page">
+        <x-logo class="brand__logo" alt="" sizes="(max-width: 899px) 92px, 124px"></x-logo>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav__list" id="menu">
+          <li><a href="#bar">Le bar</a></li>
+          <li><a href="#cave">La cave</a></li>
+          <li><a href="#evenements">Vos événements</a></li>
+          <li><a href="#rendez-vous">Les rendez-vous</a></li>
+          <li><a href="#nous-trouver">Nous trouver</a></li>
+          <li class="nav__menu-only"><a class="btn btn--ink" href="#evenements">Préparer mon événement</a></li>
+          <li class="nav__menu-only nav__tel"><a href="{{site.phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg>{{site.phone}}</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--ink site-header__cta" href="#evenements">Préparer mon événement</a>
+      <a class="icon-btn site-header__call" href="{{site.phoneHref}}" aria-label="Appeler la Cabane, {{site.phone}}"><svg class="icon"><use href="#i-phone"/></svg></a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="menu-toggle__lines" aria-hidden="true"></span>
+        <span class="visually-hidden" data-menu-label>Ouvrir le menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="top" aria-labelledby="hero-title" data-hero>
+      <div class="hero__track" data-hero-track>
+        <div class="hero__stage" data-hero-stage>
+          <div class="hero__visual">
+            <div class="hero__sky" data-sky aria-hidden="true">
+              <x-pic name="hero-sky" alt="" sizes="(max-aspect-ratio: 5/4) 60vw, 80vw" loading="eager"></x-pic>
+            </div>
+            <div class="scene-bridge" aria-hidden="true"><x-pic name="scene-bridge" alt="" sizes="20vw" loading="eager"></x-pic></div>
+            <div class="scene" data-scene style="{{sceneVars}}" role="img"
+                 aria-label="Au coucher du soleil, une femme verse une bière à l'étiquette La Cabane à Mousse ; en dessous, un homme la reçoit, bouche grande ouverte.">
+              <div class="scene__cam" data-cam>
+                <x-pic name="scene-before" class="scene__layer scene__before" alt="" sizes="(max-aspect-ratio: 5/4) 85vw, 62vh" loading="eager" fetchpriority="high"></x-pic>
+                <picture class="scene__stream" data-stream>
+                  <source type="image/avif" srcset="{{img.streamAvif}}">
+                  <img src="{{img.streamWebp}}" width="344" height="720" alt="" decoding="async">
+                </picture>
+                <x-pic name="scene-after" class="scene__layer scene__after" alt="" sizes="(max-aspect-ratio: 5/4) 85vw, 62vh" loading="eager" fetchpriority="high"></x-pic>
+                <svg class="scene__glint" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                  <path data-glint d="M771 776 C786 880 800 980 792 1128" pathLength="100"/>
+                </svg>
+                <div class="scene__flash" aria-hidden="true"></div>
+              </div>
+              <div class="scene__sun" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="hero__copy">
+            <div class="hero__head">
+              <p class="eyebrow hero__eyebrow">La Cabane à Mousse · Herbignac</p>
+              <h1 class="hero__title" id="hero-title"><span>Ça mousse.</span> <span>Ça vit.</span></h1>
+            </div>
+            <div class="hero__body">
+              <p class="hero__lead">Des bières à découvrir, des amis à retrouver et de beaux moments à partager.</p>
+              <div class="hero__ctas">
+                <a class="btn btn--ink" href="#bar">Entrer dans la Cabane <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn--foam" href="#evenements">Préparer mon événement</a>
+              </div>
+              <p class="hero__stamp">Cave &amp; bar à bières en Brière <span aria-hidden="true">·</span> Location de tireuses</p>
+            </div>
+          </div>
+
+          <svg class="wave wave--hero" viewBox="0 0 2400 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFC13C"/><stop offset="1" stop-color="#EF7A18"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 52 C220 18 420 18 640 46 S1060 92 1280 58 S1700 8 1940 36 S2280 74 2400 52 V140 H0Z" fill="url(#beer)"/>
+            <path d="M0 50 C220 16 420 16 640 44 S1060 90 1280 56 S1700 6 1940 34 S2280 72 2400 50" fill="none" stroke="#FFF3D5" stroke-opacity=".55" stroke-width="4"/>
+            <path d="M0 84 C260 60 470 64 700 82 S1110 112 1330 92 S1760 58 1990 74 S2290 98 2400 86 V140 H0Z" fill="#FFF3D5"/>
+            <g fill="#FFF3D5">
+              <circle cx="180" cy="74" r="13"/><circle cx="214" cy="66" r="8"/><circle cx="520" cy="72" r="11"/><circle cx="905" cy="94" r="14"/><circle cx="944" cy="86" r="7"/>
+              <circle cx="1240" cy="96" r="12"/><circle cx="1560" cy="70" r="10"/><circle cx="1598" cy="62" r="6"/><circle cx="1880" cy="68" r="13"/><circle cx="2210" cy="84" r="9"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO(cabane): campaign photos stand in until the owner supplies approved photos of the bar, cave and team. -->
+    <section class="bar" id="bar" aria-labelledby="bar-title">
+      <div class="bar__media" data-reveal="window">
+        <x-pic name="amizade" alt="Quatre amis rient au soleil sous un parasol orange et blanc, bouteilles à l'étiquette La Cabane à Mousse à la main." sizes="(min-width: 900px) 58vw, 100vw"></x-pic>
+      </div>
+      <div class="bar__text">
+        <p class="eyebrow eyebrow--red" data-reveal>Le bar</p>
+        <h2 class="title" id="bar-title" data-reveal>Les bons moments commencent <span class="nowrap">ici.<svg class="spark" aria-hidden="true"><use href="#i-spark"/></svg></span></h2>
+        <p class="body" data-reveal>On se retrouve, on échange, on découvre. Bienvenue à La Cabane à Mousse, à Herbignac.</p>
+        <p data-reveal><a class="btn btn--ink" href="#nous-trouver">Passer nous voir <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="cave" id="cave" aria-labelledby="cave-title">
+      <svg class="wave wave--cave" viewBox="0 0 2400 120" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+        <path d="M0 0 H2400 V48 C2160 86 1900 92 1660 66 S1180 22 940 46 S420 98 180 72 S40 56 0 60Z" fill="#FFF3D5"/>
+        <path d="M0 60 C40 56 100 62 180 72 S700 70 940 46 S1420 40 1660 66 S2160 86 2400 48" fill="none" stroke="#FFC13C" stroke-width="10"/>
+      </svg>
+      <div class="cave__inner">
+        <div class="cave__text">
+          <p class="eyebrow" data-reveal>La cave</p>
+          <h2 class="title" id="cave-title" data-reveal>Une cave. <span>Mille envies de découvrir.</span></h2>
+          <p class="body" data-reveal>Explorez la sélection de la cave et échangez avec l'équipe pour vos prochaines découvertes.</p>
+          <p class="note" data-reveal>Les références disponibles changent : renseignez-vous auprès de l'établissement.</p>
+          <p data-reveal><a class="btn btn--ink" href="#nous-trouver">Découvrir la cave <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+        </div>
+        <div class="cave__media">
+          <div class="cave__splash" data-reveal="window" data-drift="-0.06">
+            <x-pic name="splash" alt="Une bouteille à l'étiquette La Cabane à Mousse jaillit dans une gerbe de bière dorée, la capsule s'envole." sizes="(min-width: 900px) 46vw, 92vw"></x-pic>
+          </div>
+          <div class="cave__still" data-reveal="window" data-drift="0.08">
+            <x-pic name="cave" alt="Trois bouteilles à l'étiquette La Cabane à Mousse et un verre de bière blonde sur des socles clairs, dans une lumière chaude." sizes="(min-width: 900px) 30vw, 70vw"></x-pic>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO(cabane): hire conditions (equipment, capacity, deposit, delivery, prices) stay "by contact" until the owner confirms them. -->
+    <section class="events" id="evenements" aria-labelledby="events-title">
+      <svg class="torn torn--top" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40 V22 L38 16 62 25 104 12 131 20 176 9 214 21 252 14 289 24 331 10 372 19 398 13 446 24 481 11 527 20 566 8 604 22 640 15 688 26 721 12 760 19 802 9 845 23 881 14 926 21 959 10 1003 18 1046 12 1080 24 1121 13 1167 20 1201 9 1243 22 1281 15 1322 25 1360 11 1402 19 1440 14 V40Z" fill="#FFF3D5"/>
+      </svg>
+      <div class="events__inner">
+        <div class="events__media" data-reveal="window">
+          <x-pic name="location" alt="Une tireuse à bière sur une table en bois, en terrasse d'été : fût, verre mousseux et bouteilles à l'étiquette La Cabane à Mousse, sous les fanions." sizes="(min-width: 900px) 50vw, 100vw"></x-pic>
+        </div>
+        <div class="events__text">
+          <p class="eyebrow eyebrow--red" data-reveal>Location de tireuses</p>
+          <h2 class="title" id="events-title" data-reveal>Vos événements prennent <span class="nowrap">mousse.<svg class="spark" aria-hidden="true"><use href="#i-spark"/></svg></span></h2>
+          <p class="body" data-reveal>Un anniversaire, une réception ou un rendez-vous entre collègues ? Parlons de votre location de tireuse.</p>
+          <ol class="steps">
+            <li data-reveal><span class="steps__n" aria-hidden="true">01</span><h3>Votre date</h3><p>Dites-nous quand et où vous organisez votre événement.</p></li>
+            <li data-reveal><span class="steps__n" aria-hidden="true">02</span><h3>Vos envies</h3><p>Échangeons sur le matériel et les bières disponibles.</p></li>
+            <li data-reveal><span class="steps__n" aria-hidden="true">03</span><h3>Votre projet</h3><p>Confirmez les modalités avec l'équipe.</p></li>
+          </ol>
+          <div class="events__cta" data-reveal>
+            <a class="btn btn--red" href="{{site.phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg> Parler de mon événement</a>
+            <a class="events__phone" href="{{site.phoneHref}}">{{site.phone}}</a>
+          </div>
+          <p class="note" data-reveal>Disponibilités, matériel, tarifs et conditions confirmés directement par l'établissement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO(cabane): links to Instagram until a curated agenda with verified future dates exists. -->
+    <section class="news" id="rendez-vous" aria-labelledby="news-title">
+      <svg class="wave wave--news" viewBox="0 0 2400 100" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+        <path d="M0 0 H2400 V40 C2140 70 1880 74 1620 52 S1120 16 860 36 S380 78 140 58 S30 46 0 48Z" fill="#FFF3D5"/>
+        <path d="M0 48 C30 46 60 50 140 58 S600 56 860 36 S1360 30 1620 52 S2140 70 2400 40" fill="none" stroke="#EF7A18" stroke-width="8"/>
+      </svg>
+      <svg class="news__sun" viewBox="0 0 400 220" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+          <path d="M110 200a90 90 0 0 1 180 0"/>
+          <path d="M200 92V28M146 106 116 52M254 106l30-54M110 146 58 116M290 146l52-30M88 196H24M312 196h64"/>
+        </g>
+      </svg>
+      <div class="news__inner">
+        <p class="eyebrow" data-reveal>Actualités</p>
+        <h2 class="title" id="news-title" data-reveal>La vie de la Cabane.</h2>
+        <p class="body" data-reveal>Retrouvez nos actualités et les prochains rendez-vous sur nos réseaux.</p>
+        <p data-reveal><a class="btn btn--ink" href="{{site.instagramUrl}}" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-insta"/></svg> Voir les actualités <span class="visually-hidden">(Instagram, nouvel onglet)</span></a></p>
+      </div>
+    </section>
+
+    <section class="contact" id="nous-trouver" aria-labelledby="contact-title">
+      <svg class="torn torn--top torn--red" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40 V18 L44 24 79 12 118 21 160 10 197 23 236 15 281 26 318 11 357 20 401 13 439 25 478 9 522 19 561 12 603 24 647 14 683 22 724 8 769 21 806 13 851 26 890 12 931 19 972 10 1011 23 1055 15 1093 24 1137 11 1178 20 1216 13 1260 25 1297 10 1339 21 1380 14 1440 22 V40Z" fill="#BE3427"/>
+      </svg>
+      <div class="contact__inner">
+        <div class="contact__head">
+          <p class="eyebrow eyebrow--foam" data-reveal>Nous trouver</p>
+          <h2 class="title" id="contact-title" data-reveal>On vous garde une place à Herbignac.</h2>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__item" data-reveal>
+            <svg class="icon icon--lg"><use href="#i-pin"/></svg>
+            <h3>Adresse</h3>
+            <p>{{site.street}}<br>{{site.postalCode}} {{site.city}}</p>
+          </div>
+          <div class="contact__item" data-reveal>
+            <svg class="icon icon--lg"><use href="#i-phone"/></svg>
+            <h3>Téléphone</h3>
+            <p><a class="contact__phone" href="{{site.phoneHref}}">{{site.phone}}</a></p>
+          </div>
+          <div class="contact__item contact__item--hours" data-reveal>
+            <svg class="icon icon--lg"><use href="#i-clock"/></svg>
+            <h3>Horaires</h3>
+            <ul class="hours" data-hours>{{hoursList}}</ul>
+            <p class="note">Horaires particuliers à confirmer auprès de l'établissement.</p>
+          </div>
+        </div>
+        <div class="contact__ctas" data-reveal>
+          <a class="btn btn--foam" href="{{site.phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg> Appeler la Cabane</a>
+          <a class="btn btn--line" href="{{site.mapUrl}}" target="_blank" rel="noopener">Voir l'itinéraire <svg class="icon"><use href="#i-out"/></svg><span class="visually-hidden">(Google Maps, nouvel onglet)</span></a>
+        </div>
+      </div>
+      <svg class="contact__sun" viewBox="0 0 360 200" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <path d="M100 196a80 80 0 0 1 160 0"/><path d="M128 196a52 52 0 0 1 104 0"/>
+          <path d="M180 100V20M134 110 96 44M226 110l38-66M104 146 40 108M256 146l64-38M86 194H8M274 194h78"/>
+          <path d="M30 210h300" stroke-width="4"/>
+        </g>
+      </svg>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <x-logo class="footer__logo" alt="{{site.name}}" sizes="96px"></x-logo>
+      <div class="footer__info">
+        <p class="footer__name">{{site.fullName}} <span aria-hidden="true">·</span> {{site.descriptor}}</p>
+        <p>{{site.street}}, {{site.postalCode}} {{site.city}} <span aria-hidden="true">·</span> <a href="{{site.phoneHref}}">{{site.phone}}</a></p>
+        <p><a href="{{site.instagramUrl}}" target="_blank" rel="noopener"><svg class="icon"><use href="#i-insta"/></svg> Instagram<span class="visually-hidden"> (nouvel onglet)</span></a></p>
+        <nav class="footer__nav" aria-label="Plan du site">
+          <a href="#bar">Le bar</a><a href="#cave">La cave</a><a href="#evenements">Vos événements</a><a href="#rendez-vous">Les rendez-vous</a><a href="#nous-trouver">Nous trouver</a>
+        </nav>
+      </div>
+      <!-- TODO(cabane): mentions légales (publisher, SIRET, host) once the owner validates the details. -->
+      <p class="footer__warning">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+[
+  {
+    "file": "01-identidade/logo-transparente.png",
+    "width": 1309,
+    "height": 1201,
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "02-direcao/mockup-desktop.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "02-direcao/mockup-mobile.png",
+    "width": 724,
+    "height": 2172,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "03-hero/hero-desktop.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "03-hero/hero-mobile.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "04-secoes/amizade.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "04-secoes/cave-rotulada.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "04-secoes/locacao-verao.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "04-secoes/produto-splash.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "05-camadas/cena-sem-fluxo.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGB",
+    "alpha_range": null
+  },
+  {
+    "file": "05-camadas/fluxo-fotografico.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "05-camadas/pessoa-inferior.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "05-camadas/pessoa-superior.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      254
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+*.log
+# third-party references and client screenshots: kept local, never published
+00-referencias/
+# verification overlays from scripts/measure-scene.py
+scripts/out/

@@ -1,0 +1,29 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "neck": [
+    755,
+    795
+  ],
+  "mouth": [
+    790,
+    1135
+  ],
+  "liquid_reveal": {
+    "start": 0.25,
+    "end": 0.6,
+    "top": 770,
+    "height": 490
+  },
+  "contact_crossfade": {
+    "start": 0.6,
+    "end": 0.75
+  },
+  "play_duration_seconds": 12,
+  "source_before": "../05-camadas/cena-sem-fluxo.png",
+  "source_after": "../03-hero/hero-mobile.png",
+  "reduced_motion": "final frame, no prolonged sticky",
+  "mode": "photographic 2D reveal, not 3D fluid simulation"
+}

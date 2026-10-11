@@ -1,0 +1,35 @@
+{
+  "name": "La Cabane à Mousse Herbignac",
+  "descriptor": "Location de tireuses, Cave & Bar à Bières en Brière",
+  "concept": "Ça mousse. Ça vit.",
+  "address": "21 avenue de la Monneraye (RD33), 44410 Herbignac",
+  "phone": "07 60 21 77 18",
+  "phone_link": "tel:+33760217718",
+  "email": null,
+  "facebook_url": null,
+  "instagram_url": "https://www.instagram.com/lacabaneamousse.herbignac/",
+  "instagram_status": "handle visible in screenshot; confirm URL before launch",
+  "map_url": "https://www.google.com/maps/search/?api=1&query=La+Cabane+a+Mousse+21+avenue+de+la+Monneraye+Herbignac",
+  "hours": {
+    "monday_to_friday": "11:00-21:00",
+    "saturday": "10:00-21:00",
+    "sunday": "closed",
+    "status": "screenshots and PagesJaunes; confirm exceptional hours"
+  },
+  "hire": {
+    "price": null,
+    "deposit": null,
+    "delivery": null,
+    "equipment_models": null,
+    "availability": "by_contact"
+  },
+  "palette": {
+    "honey": "#FFC13C",
+    "orange": "#EF7A18",
+    "red": "#BE3427",
+    "foam": "#FFF3D5",
+    "ink": "#1C1714"
+  },
+  "factual_source": "07-integracao/FONTES.md",
+  "campaign_labels": "La Cabane à Mousse logo; conceptual packaging, not actual own-brew inventory"
+}
