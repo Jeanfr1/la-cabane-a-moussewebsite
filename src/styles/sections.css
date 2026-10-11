@@ -48,9 +48,39 @@
 .cave__copy .lead { margin-top: 30px; max-width: 26em; }
 .cave__copy .note { margin: 18px 0 30px; max-width: 30em; }
 
+/* ---------- Photo backgrounds (Les tireuses, Nous trouver) ----------
+   The photo bleeds in from one side and melts into the section colour; every line of text sits
+   on the solid side of the gradient. */
+.section--photo { position: relative; isolation: isolate; overflow: hidden; }
+.section-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.section-bg__pic, .section-bg__pic img { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.section-bg::after { content: ""; position: absolute; inset: 0; }
+
+.section-bg--fete { left: 38%; }
+.section-bg--fete img { object-position: 50% 42%; }
+.section-bg--fete::after {
+  background:
+    linear-gradient(90deg, var(--beer) 0%, rgb(243 180 63 / .78) 18%, rgb(243 180 63 / .2) 48%, rgb(243 180 63 / 0) 72%),
+    linear-gradient(0deg, rgb(243 180 63 / .55), rgb(243 180 63 / 0) 22%);
+}
+
+.section-bg--retrouvailles { left: 34%; }
+.section-bg--retrouvailles img { object-position: 50% 44%; filter: saturate(.85); }
+.section-bg--retrouvailles::after {
+  background:
+    linear-gradient(90deg, var(--ink) 0%, rgb(25 25 24 / .8) 20%, rgb(25 25 24 / .3) 52%, rgb(25 25 24 / .18) 100%),
+    linear-gradient(0deg, var(--ink) 0%, rgb(25 25 24 / .9) 40%, rgb(25 25 24 / 0) 72%);
+}
+
 /* ---------- Les tireuses ---------- */
 .hire__top {
   display: grid; grid-template-columns: 1.4fr 1fr; gap: 6vw; align-items: end;
+}
+@media (min-width: 851px) {
+  /* text column on the solid side, the photo on the right */
+  .hire .wrap > :not(.section-head) { max-width: min(800px, 56%); margin-left: 0; }
+  .hire__top { grid-template-columns: 1fr; gap: 30px; }
+  .hire .steps { column-gap: 26px; }
 }
 .hire__aside .lead { margin-bottom: 28px; max-width: 24em; }
 .steps {
@@ -136,6 +166,14 @@
   .steps h3 { margin: 0; font-size: 28px; }
   .steps p { grid-column: 2; margin-top: 10px; }
   .steps__n { padding-top: 6px; }
+
+  /* phones: the photo is a band at the top of the section, fading into its colour */
+  .section-bg--fete, .section-bg--retrouvailles { left: 0; bottom: auto; height: 112vw; }
+  .section-bg--fete::after { background: linear-gradient(180deg, rgb(243 180 63 / .2) 0%, rgb(243 180 63 / 0) 26%, rgb(243 180 63 / .8) 68%, var(--beer) 80%); }
+  .section-bg--retrouvailles::after { background: linear-gradient(180deg, rgb(25 25 24 / .5) 0%, rgb(25 25 24 / .1) 26%, rgb(25 25 24 / .7) 62%, var(--ink) 80%); }
+  .section--photo { padding-top: 0; }
+  .section--photo .wrap { padding-top: 78vw; }
+  .section--photo .section-head { margin-bottom: 36px; }
   .news .display { font-size: clamp(50px, 14vw, 96px); }
   .contact__grid { grid-template-columns: 1fr; padding-top: 32px; }
   .footer__inner { flex-direction: column; align-items: flex-start; }

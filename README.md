@@ -28,7 +28,7 @@
 
 **La Cabane à Mousse** is a cave & bar à bières in Herbignac, in the Brière, that also hires out beer taps for events. The site opens on a toast: three friends clink bottles wearing the Cabane's label under the headline **Le goût d’être ensemble.** As you scroll, the bar dissolves around the bottles, the camera moves in on the clink, and **a window opens from the centre onto the real room of the Cabane**, which leads into the rest of the page.
 
-Everything after the hero is the real place: the counter with its wooden sign, the facade and its terrace of deckchairs, the cable-reel display of the cellar. The palette comes from the bar itself (graphite walls, black metal, wood, beer amber, the orange of the facade lettering, foam) and the type is a massive condensed face. Every section leads to one of two actions: **come by** or **call the Cabane**.
+Then comes the real place: the counter with its wooden sign, the facade and its terrace of deckchairs, the cable-reel display of the cellar. Tap hire and the contact block close the page on two full-bleed photos (golden bottles and a glass being poured, friends toasting) that melt into the section colours. The palette comes from the bar itself (graphite walls, black metal, wood, beer amber, the orange of the facade lettering, foam) and the type is a massive condensed face. Every section leads to one of two actions: **come by** or **call the Cabane**.
 
 - **A three-chapter opening**: Le rendez-vous → Le tchin → La vraie Cabane, scrubbed by the scroll, never blocking it
 - **The real venue**: the four photos of the room, counter, facade and cellar, framed so the screenshot interface never shows
@@ -82,9 +82,9 @@ The hero section is 190 % of the screen height (165 % on phones); its stage stay
 | 02  | Signature band                                   | n/a           | La Cabane à Mousse ✳ Herbignac ✳ De bons moments, tout simplement.               |
 | 03  | **C’est ici que ça se passe.**                   | `#bar`        | The real counter in a tilted frame, then the facade and terrace with the address |
 | 04  | **Le goût de la découverte.**                    | `#cave`       | The cellar's cable-reel display; advice by phone, no stock or prices promised    |
-| 05  | **Votre fête. Notre mousse.**                    | `#tireuses`   | Tap hire in three steps (date, wishes, talk) and a direct call                  |
+| 05  | **Votre fête. Notre mousse.**                    | `#tireuses`   | Golden bottles and a poured glass melting into amber; tap hire in three steps and a direct call |
 | 06  | **On garde le contact.**                         | `#actualites` | News on Instagram; no past poster shown as a future event                       |
-| 07  | **À tout à l’heure.**                            | `#contact`    | Address and directions, phone, hours with today highlighted                     |
+| 07  | **À tout à l’heure.**                            | `#contact`    | Friends toasting behind the title, fading into graphite; address, phone, hours with today highlighted |
 | 08  | Footer                                           | n/a           | Details, site map and the French health warning                                 |
 
 <br />
@@ -108,6 +108,7 @@ The hero section is 190 % of the screen height (165 % on phones); its stage stay
 
 - **🍻 Scroll storytelling**: zoom, dissolve, a registered close-up and a clip-path window, driven by one function and custom properties
 - **🏠 The real place**: the four venue photos are framed by the rectangles documented in the kit, so the screenshots' interface never shows and the masters stay untouched
+- **🌅 Photo backgrounds**: on desktop the tap-hire and contact photos bleed in from the right and melt into the section colour; on phones they become a band at the top. All text sits on the solid side of the gradient
 - **📞 Contact without a form**: every action is a real `tel:` link, the directions or Instagram
 - **🕘 Today's hours**: opening hours are rendered into the HTML at build time; a few lines of JS only highlight today's row (Paris time)
 - **♿ Accessible components**: skip link, labelled menu button, a pressed-state animation switch, faded titles taken out of the tab order, focus rings in amber or ink depending on the background
@@ -118,14 +119,14 @@ The hero section is 190 % of the screen height (165 % on phones); its stage stay
 
 ## 💻 Tech stack
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="40" height="40" /><br />Vite 6 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" /><br />JavaScript | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" /><br />HTML5 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" /><br />CSS3 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" /><br />Python | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" height="40" /><br />OpenCV | <img src="https://cdn.simpleicons.org/vercel/000000/ffffff" width="40" height="40" /><br />Vercel |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="40" height="40" /><br />Vite 6 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" /><br />JavaScript | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" /><br />HTML5 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" /><br />CSS3 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" /><br />Python | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" height="40" /><br />OpenCV | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="40" height="40" /><br />PyTorch | <img src="https://cdn.simpleicons.org/vercel/000000/ffffff" width="40" height="40" /><br />Vercel |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ### Why this stack?
 
 - **Vite + plain JavaScript**: a one-page site doesn't need a framework runtime; the page is static HTML with three small modules
 - **Own scroll engine**: one progress value and a dozen custom properties; a few lines of `requestAnimationFrame` replace a scroll library
-- **Python + OpenCV for the assets**: the close-up layer is registered on the campaign once, offline, and the result is a small JSON file the page reads
+- **Python + OpenCV + PyTorch for the assets**: the close-up layer is registered on the campaign once, offline, and the result is a small JSON file the page reads; the two section backgrounds arrived as ~410 px screenshots and are enlarged 4× with Real-ESRGAN
 - **Self-hosted fonts**: the kit's condensed face and Inter, without third-party font requests
 - **Vercel**: every push to `main` deploys automatically
 
@@ -174,6 +175,7 @@ npm run preview
 npm run images                        # sharp: kit masters → AVIF/WebP, icons, share image
 npm run fonts                         # fonttools + brotli
 python3 scripts/register-toast.py     # opencv-python: writes src/data/toast.json (--check for an overlay)
+python3 scripts/prepare-backgrounds.py RealESRGAN_x4plus.pth   # opencv + torch: section backgrounds
 ```
 
 <br />
@@ -197,10 +199,12 @@ la-cabane-a-moussewebsite/
 │       └── nav.js              # Mobile menu, today's hours
 ├── scripts/
 │   ├── register-toast.py       # SIFT + RANSAC similarity: close-up layer → campaign
+│   ├── prepare-backgrounds.py  # Section backgrounds: crop the screenshots, fill the viewer's buttons, enlarge
+│   ├── upscale.py              # Real-ESRGAN x4plus (RRDBNet) runner
 │   ├── build-images.mjs        # Masters → framed, resized AVIF/WebP, icons, share image (sharp)
 │   └── subset-fonts.py         # Condensed face → Latin WOFF2 + licence
 ├── public/                     # Generated images, fonts and licence, favicons, Open Graph image
-├── assets-src/og.png           # Capture of the built hero for the share image
+├── assets-src/                 # Share-image capture, background screenshots as supplied, enlarged backgrounds
 └── 01-identidade … 08-estudo/  # The creative kit V3 (direction, masters, scripts, study), kept as delivered
 ```
 
@@ -228,6 +232,7 @@ Items waiting on the owner. Each one is marked `TODO(cabane)` in `index.html` or
 
 - [ ] Full-resolution originals of the four venue photos (the site frames screenshots); the room and counter photos come from Google Maps visitors, so replace them or confirm the rights
 - [ ] The official logo master (the site uses the reconstruction from the kit)
+- [ ] The tap-hire and contact backgrounds are screenshots of third-party brand photos (Modelo, Corona Extra): confirm the rights, or replace them with the Cabane's own photos, before launch
 - [ ] Confirm the Instagram link and add the Facebook page (the exact URL wasn't in the brief)
 - [ ] Replace the directions link (an address search) with the Cabane's own Google Maps place
 - [ ] Reconfirm opening hours and any exceptional hours
@@ -249,6 +254,7 @@ Choices made where the kit left room for interpretation:
 
 - **La Cabane à Mousse** for the logo, the photos of the venue and the brief
 - **Nimbus Sans Narrow** by URW++ (AGPL-3 with font exception, licence in `public/fonts/`) and **[Inter](https://rsms.me/inter/)** by Rasmus Andersson (OFL)
+- **[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)** by Xintao Wang et al. (BSD-3-Clause) for the background enlargement
 - **[OpenCV](https://github.com/opencv/opencv)** and **[sharp](https://sharp.pixelplumbing.com)** for the registration and image pipelines
 - **[Vite](https://vite.dev)** and **[Vercel](https://vercel.com)**
 

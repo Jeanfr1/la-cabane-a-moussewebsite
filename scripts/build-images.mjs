@@ -33,6 +33,9 @@ const jobs = [
   { name: 'comptoir', src: '04-photos-originales/comptoir-original.png', rev: 1, widths: [480, 806], crop: true },
   { name: 'terrasse', src: '04-photos-originales/facade-terrasse-originale.png', rev: 1, widths: [480, 806], crop: true },
   { name: 'cave', src: '04-photos-originales/cave-originale.png', rev: 1, widths: [480, 810], crop: true },
+  // section backgrounds supplied on 2026-10-12 (scripts/prepare-backgrounds.py)
+  { name: 'fete', src: 'assets-src/bg-fete.png', rev: 1, widths: [640, 1100, 1616] },
+  { name: 'retrouvailles', src: 'assets-src/bg-retrouvailles.png', rev: 1, widths: [640, 1100, 1612] },
 ];
 
 const manifest = {};

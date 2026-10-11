@@ -175,7 +175,11 @@
     </section>
 
     <!-- TODO(cabane): hire conditions (equipment, availability, prices, deposit, delivery, cleaning, booking) stay "by contact" until the owner confirms them. -->
-    <section class="hire section section--beer" id="tireuses" aria-labelledby="hire-title">
+    <!-- TODO(cabane): both section backgrounds come from screenshots of third-party brand photos (Modelo, Corona Extra) supplied on 2026-10-12: confirm the rights or replace them with the Cabane's own photos before launch. -->
+    <section class="hire section section--beer section--photo" id="tireuses" aria-labelledby="hire-title">
+      <div class="section-bg section-bg--fete" aria-hidden="true">
+        <x-pic name="fete" class="section-bg__pic" sizes="(min-width: 851px) 62vw, 100vw" alt=""></x-pic>
+      </div>
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">03 / Location de tireuses</p><p class="section-head__quiet">La Cabane s’invite à votre fête.</p></div>
         <div class="hire__top">
@@ -204,7 +208,10 @@
       </div>
     </section>
 
-    <section class="contact section section--dark" id="contact" aria-labelledby="contact-title">
+    <section class="contact section section--dark section--photo" id="contact" aria-labelledby="contact-title">
+      <div class="section-bg section-bg--retrouvailles" aria-hidden="true">
+        <x-pic name="retrouvailles" class="section-bg__pic" sizes="(min-width: 851px) 60vw, 100vw" alt=""></x-pic>
+      </div>
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">04 / Nous trouver</p><p class="section-head__quiet">Herbignac · Brière</p></div>
         <h2 class="display display--xl" id="contact-title" data-reveal><span>À tout</span> <em>à l’heure.</em></h2>

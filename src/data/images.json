@@ -111,6 +111,44 @@
       "/img/cave-v1-810.webp"
     ]
   },
+  "fete": {
+    "w": 1616,
+    "h": 1688,
+    "widths": [
+      640,
+      1100,
+      1616
+    ],
+    "avif": [
+      "/img/fete-v1-640.avif",
+      "/img/fete-v1-1100.avif",
+      "/img/fete-v1-1616.avif"
+    ],
+    "webp": [
+      "/img/fete-v1-640.webp",
+      "/img/fete-v1-1100.webp",
+      "/img/fete-v1-1616.webp"
+    ]
+  },
+  "retrouvailles": {
+    "w": 1612,
+    "h": 1852,
+    "widths": [
+      640,
+      1100,
+      1612
+    ],
+    "avif": [
+      "/img/retrouvailles-v1-640.avif",
+      "/img/retrouvailles-v1-1100.avif",
+      "/img/retrouvailles-v1-1612.avif"
+    ],
+    "webp": [
+      "/img/retrouvailles-v1-640.webp",
+      "/img/retrouvailles-v1-1100.webp",
+      "/img/retrouvailles-v1-1612.webp"
+    ]
+  },
   "logo": {
     "w": 1030,
     "h": 1152,
