@@ -69,6 +69,7 @@ function cabaneHtml() {
       order: 'pre',
       handler(html) {
         return html
+          .replace(/<!--[\s\S]*?-->\s*/g, '')   // TODO(cabane) notes stay in the source, never in the published page
           .replace(/<x-pic\b[^>]*><\/x-pic>/g, picture)
           .replace(/<x-logo\b[^>]*><\/x-logo>/g, logo)
           .replace(/\{\{([\w.]+)\}\}/g, (m, key) => {
