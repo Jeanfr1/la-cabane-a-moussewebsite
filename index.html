@@ -19,19 +19,19 @@
   <meta property="og:title" content="{{site.name}} · Ça mousse. Ça vit.">
   <meta property="og:description" content="Cave & bar à bières à Herbignac, en Brière. Location de tireuses pour vos événements.">
   <meta property="og:url" content="{{site.url}}/">
-  <meta property="og:image" content="{{site.url}}/og-v1.jpg">
+  <meta property="og:image" content="{{site.url}}/og-v2.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script>
-    // Motion bootstrap: the scroll pour needs JS and no reduced-motion preference.
-    // If the bundle has not confirmed within 4 s, fall back to the static final scene.
+    // Motion bootstrap: the scroll-driven pour needs JS and no reduced-motion preference.
+    // If the bundle has not confirmed within 4 s, the full pour is shown as a still.
     (function () {
       var d = document.documentElement;
       d.classList.add('js');
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        d.classList.add('hero-motion');
-        setTimeout(function () { if (!window.__cabaneReady) d.classList.remove('hero-motion'); }, 4000);
+        d.classList.add('pour-motion');
+        setTimeout(function () { if (!window.__cabaneReady) d.classList.remove('pour-motion'); }, 4000);
       }
     })();
   </script>
@@ -41,12 +41,24 @@
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9.2 3l1.7 4.3-2.2 1.6a12 12 0 0 0 6.4 6.4l1.6-2.2 4.3 1.7-.5 2.6c-.2 1-1.1 1.6-2.1 1.6C10.4 19 5 13.6 5 5.6c0-1 .6-1.9 1.6-2.1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 1 1 13 0C18.5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.8" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
     <symbol id="i-out" viewBox="0 0 24 24"><path d="M8 16 16.5 7.5M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-spark" viewBox="0 0 48 48"><path d="M8 30 18 22M14 41l12-5M22 15 26 4" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <!-- the pendant lamps of the bar room: Edison bulbs in an open wooden frame -->
+    <symbol id="i-lamp" viewBox="0 0 220 300">
+      <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M110 0v58"/>
+        <path d="M40 58h140l-22 26H18z"/><path d="M18 84v118M158 84v118M180 58v118M40 58v14"/>
+        <path d="M18 202h140l22-26M18 202l22-26h18"/>
+        <path d="M70 84v52M110 84v74M146 84v40"/>
+        <path d="M70 136a14 18 0 1 0 .1 0M110 158a16 21 0 1 0 .1 0M146 124a13 17 0 1 0 .1 0"/>
+        <path d="M66 150l4 8 4-8M105 174l5 9 5-9M142 137l4 8 4-8" stroke-width="3"/>
+      </g>
+    </symbol>
   </svg>
 
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -77,75 +89,73 @@
   </header>
 
   <main id="contenu">
-    <section class="hero" id="top" aria-labelledby="hero-title" data-hero>
-      <div class="hero__track" data-hero-track>
-        <div class="hero__stage" data-hero-stage>
-          <div class="hero__visual">
-            <div class="hero__sky" data-sky aria-hidden="true">
-              <x-pic name="hero-sky" alt="" sizes="(max-aspect-ratio: 5/4) 60vw, 80vw" loading="eager"></x-pic>
-            </div>
-            <div class="scene-bridge" aria-hidden="true"><x-pic name="scene-bridge" alt="" sizes="20vw" loading="eager"></x-pic></div>
-            <div class="scene" data-scene style="{{sceneVars}}" role="img"
-                 aria-label="Au coucher du soleil, une femme verse une bière à l'étiquette La Cabane à Mousse ; en dessous, un homme la reçoit, bouche grande ouverte.">
-              <div class="scene__cam" data-cam>
-                <x-pic name="scene-before" class="scene__layer scene__before" alt="" sizes="(max-aspect-ratio: 5/4) 85vw, 62vh" loading="eager" fetchpriority="high"></x-pic>
-                <picture class="scene__stream" data-stream>
-                  <source type="image/avif" srcset="{{img.streamAvif}}">
-                  <img src="{{img.streamWebp}}" width="344" height="720" alt="" decoding="async">
-                </picture>
-                <x-pic name="scene-after" class="scene__layer scene__after" alt="" sizes="(max-aspect-ratio: 5/4) 85vw, 62vh" loading="eager" fetchpriority="high"></x-pic>
-                <svg class="scene__glint" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                  <path data-glint d="M771 776 C786 880 800 980 792 1128" pathLength="100"/>
-                </svg>
-                <div class="scene__flash" aria-hidden="true"></div>
-              </div>
-              <div class="scene__sun" aria-hidden="true"></div>
-            </div>
-          </div>
-
-          <div class="hero__copy">
-            <div class="hero__head">
-              <p class="eyebrow hero__eyebrow">La Cabane à Mousse · Herbignac</p>
-              <h1 class="hero__title" id="hero-title"><span>Ça mousse.</span> <span>Ça vit.</span></h1>
-            </div>
-            <div class="hero__body">
-              <p class="hero__lead">Des bières à découvrir, des amis à retrouver et de beaux moments à partager.</p>
-              <div class="hero__ctas">
-                <a class="btn btn--ink" href="#bar">Entrer dans la Cabane <svg class="icon"><use href="#i-arrow"/></svg></a>
-                <a class="btn btn--foam" href="#evenements">Préparer mon événement</a>
-              </div>
-              <p class="hero__stamp">Cave &amp; bar à bières en Brière <span aria-hidden="true">·</span> Location de tireuses</p>
-            </div>
-          </div>
-
-          <svg class="wave wave--hero" viewBox="0 0 2400 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-            <defs>
-              <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#FFC13C"/><stop offset="1" stop-color="#EF7A18"/>
-              </linearGradient>
-            </defs>
-            <path d="M0 52 C220 18 420 18 640 46 S1060 92 1280 58 S1700 8 1940 36 S2280 74 2400 52 V140 H0Z" fill="url(#beer)"/>
-            <path d="M0 50 C220 16 420 16 640 44 S1060 90 1280 56 S1700 6 1940 34 S2280 72 2400 50" fill="none" stroke="#FFF3D5" stroke-opacity=".55" stroke-width="4"/>
-            <path d="M0 84 C260 60 470 64 700 82 S1110 112 1330 92 S1760 58 1990 74 S2290 98 2400 86 V140 H0Z" fill="#FFF3D5"/>
-            <g fill="#FFF3D5">
-              <circle cx="180" cy="74" r="13"/><circle cx="214" cy="66" r="8"/><circle cx="520" cy="72" r="11"/><circle cx="905" cy="94" r="14"/><circle cx="944" cy="86" r="7"/>
-              <circle cx="1240" cy="96" r="12"/><circle cx="1560" cy="70" r="10"/><circle cx="1598" cy="62" r="6"/><circle cx="1880" cy="68" r="13"/><circle cx="2210" cy="84" r="9"/>
-            </g>
-          </svg>
-        </div>
+    <!-- 01 · Hero: the real bar room behind; the woman tipping the bottle stands at the bottom right.
+         She belongs to the pour rig in #bar, which overlaps this section from below. -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <x-pic name="hero-bar" alt="" sizes="100vw" loading="eager" fetchpriority="high"></x-pic>
       </div>
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">La Cabane à Mousse · Herbignac</p>
+        <h1 class="hero__title" id="hero-title"><span>Ça mousse.</span> <span>Ça vit.</span></h1>
+        <p class="hero__lead">Des bières à découvrir, des amis à retrouver et de beaux moments à partager.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--honey" href="#bar">Entrer dans la Cabane <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#evenements">Préparer mon événement</a>
+        </div>
+        <p class="hero__stamp">Cave &amp; bar à bières en Brière <span aria-hidden="true">·</span> Location de tireuses</p>
+      </div>
+      <div class="hero__stage" aria-hidden="true"></div>
+      <a class="hero__cue" href="#bar" tabindex="-1" aria-hidden="true"><svg class="icon"><use href="#i-down"/></svg></a>
     </section>
 
-    <!-- TODO(cabane): campaign photos stand in until the owner supplies approved photos of the bar, cave and team. -->
+    <!-- 02 · Le bar: the man catches the beer poured from the hero. -->
     <section class="bar" id="bar" aria-labelledby="bar-title">
-      <div class="bar__media" data-reveal="window">
-        <x-pic name="amizade" alt="Quatre amis rient au soleil sous un parasol orange et blanc, bouteilles à l'étiquette La Cabane à Mousse à la main." sizes="(min-width: 900px) 58vw, 100vw"></x-pic>
+      <svg class="wave wave--pour" viewBox="0 0 2400 140" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFC13C"/><stop offset="1" stop-color="#EF7A18"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 52 C220 18 420 18 640 46 S1060 92 1280 58 S1700 8 1940 36 S2280 74 2400 52 V140 H0Z" fill="url(#beer)"/>
+        <path d="M0 50 C220 16 420 16 640 44 S1060 90 1280 56 S1700 6 1940 34 S2280 72 2400 50" fill="none" stroke="#FFF3D5" stroke-opacity=".55" stroke-width="4"/>
+        <path d="M0 84 C260 60 470 64 700 82 S1110 112 1330 92 S1760 58 1990 74 S2290 98 2400 86 V140 H0Z" fill="#FFF3D5"/>
+        <g fill="#FFF3D5">
+          <circle cx="180" cy="74" r="13"/><circle cx="214" cy="66" r="8"/><circle cx="520" cy="72" r="11"/><circle cx="905" cy="94" r="14"/><circle cx="944" cy="86" r="7"/>
+          <circle cx="1240" cy="96" r="12"/><circle cx="1560" cy="70" r="10"/><circle cx="1598" cy="62" r="6"/><circle cx="1880" cy="68" r="13"/><circle cx="2210" cy="84" r="9"/>
+        </g>
+      </svg>
+
+      <div class="pour" data-pour role="img"
+           aria-label="Une femme verse une grande bouteille à l'étiquette La Cabane à Mousse ; la bière descend jusqu'à la bouche grande ouverte d'un ami, plus bas.">
+        <div class="pour__glow"></div>
+        <x-pic name="pour-woman" class="pour__layer pour__woman" style="{{pour.woman}}" alt="" sizes="(min-width: 900px) 640px, 360px" loading="eager"></x-pic>
+        <x-pic name="pour-man" class="pour__layer pour__man" style="{{pour.man}}" alt="" sizes="(min-width: 900px) 820px, 440px" loading="eager"></x-pic>
+        <div class="pour__layer pour__stream" style="{{pour.stream}}" data-stream>
+          <x-pic name="pour-stream" alt="" sizes="(min-width: 900px) 200px, 110px" loading="eager"></x-pic>
+          <span class="pour__shine"></span>
+        </div>
+        <span class="pour__drip" style="{{pour.neck}}"><i></i><i></i><i></i></span>
+        <span class="pour__splash" style="{{pour.mouth}}"><i></i><i></i><i></i><i></i><i></i><i></i></span>
       </div>
-      <div class="bar__text">
-        <p class="eyebrow eyebrow--red" data-reveal>Le bar</p>
-        <h2 class="title" id="bar-title" data-reveal>Les bons moments commencent <span class="nowrap">ici.<svg class="spark" aria-hidden="true"><use href="#i-spark"/></svg></span></h2>
-        <p class="body" data-reveal>On se retrouve, on échange, on découvre. Bienvenue à La Cabane à Mousse, à Herbignac.</p>
-        <p data-reveal><a class="btn btn--ink" href="#nous-trouver">Passer nous voir <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+
+      <div class="bar__intro">
+        <div class="bar__text">
+          <p class="eyebrow eyebrow--red" data-reveal>Le bar</p>
+          <h2 class="title" id="bar-title" data-reveal>Les bons moments commencent <span class="nowrap">ici.<svg class="spark" aria-hidden="true"><use href="#i-spark"/></svg></span></h2>
+          <p class="body" data-reveal>On se retrouve, on échange, on découvre. Bienvenue à La Cabane à Mousse, à Herbignac.</p>
+          <p data-reveal><a class="btn btn--ink" href="#nous-trouver">Passer nous voir <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+        </div>
+      </div>
+
+      <!-- TODO(cabane): this counter photo and the hero's room photo come from Google Maps visitors (cropped from the brief's screenshots, enlarged); replace them with the owner's own photos, or confirm the rights, before launch. -->
+      <div class="bar__gallery">
+        <div class="bar__room" data-reveal="window">
+          <x-pic name="counter" alt="Le comptoir de La Cabane à Mousse : enseigne en bois « Bar La Cabane à Mousse », lustres à ampoules, ardoises et tireuses." sizes="(min-width: 900px) 58vw, 100vw"></x-pic>
+        </div>
+        <div class="bar__friends" data-reveal="window" data-drift="-0.05">
+          <x-pic name="amizade" alt="Des amis trinquent au soleil, bouteilles à l'étiquette La Cabane à Mousse à la main." sizes="(min-width: 900px) 34vw, 70vw"></x-pic>
+        </div>
       </div>
     </section>
 
@@ -163,11 +173,11 @@
           <p data-reveal><a class="btn btn--ink" href="#nous-trouver">Découvrir la cave <svg class="icon"><use href="#i-arrow"/></svg></a></p>
         </div>
         <div class="cave__media">
-          <div class="cave__splash" data-reveal="window" data-drift="-0.06">
-            <x-pic name="splash" alt="Une bouteille à l'étiquette La Cabane à Mousse jaillit dans une gerbe de bière dorée, la capsule s'envole." sizes="(min-width: 900px) 46vw, 92vw"></x-pic>
+          <div class="cave__reel" data-reveal="window">
+            <x-pic name="cave-real" alt="Dans la cave de La Cabane à Mousse : un touret en bois chargé de coffrets et de bouteilles, devant les rayonnages de bières." sizes="(min-width: 900px) 34vw, 86vw"></x-pic>
           </div>
-          <div class="cave__still" data-reveal="window" data-drift="0.08">
-            <x-pic name="cave" alt="Trois bouteilles à l'étiquette La Cabane à Mousse et un verre de bière blonde sur des socles clairs, dans une lumière chaude." sizes="(min-width: 900px) 30vw, 70vw"></x-pic>
+          <div class="cave__splash" data-reveal="window" data-drift="-0.06">
+            <x-pic name="splash" alt="Une bouteille à l'étiquette La Cabane à Mousse jaillit dans une gerbe de bière dorée, la capsule s'envole." sizes="(min-width: 900px) 30vw, 66vw"></x-pic>
           </div>
         </div>
       </div>
@@ -206,12 +216,8 @@
         <path d="M0 0 H2400 V40 C2140 70 1880 74 1620 52 S1120 16 860 36 S380 78 140 58 S30 46 0 48Z" fill="#FFF3D5"/>
         <path d="M0 48 C30 46 60 50 140 58 S600 56 860 36 S1360 30 1620 52 S2140 70 2400 40" fill="none" stroke="#EF7A18" stroke-width="8"/>
       </svg>
-      <svg class="news__sun" viewBox="0 0 400 220" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
-          <path d="M110 200a90 90 0 0 1 180 0"/>
-          <path d="M200 92V28M146 106 116 52M254 106l30-54M110 146 58 116M290 146l52-30M88 196H24M312 196h64"/>
-        </g>
-      </svg>
+      <svg class="news__lamp news__lamp--a" aria-hidden="true"><use href="#i-lamp"/></svg>
+      <svg class="news__lamp news__lamp--b" aria-hidden="true"><use href="#i-lamp"/></svg>
       <div class="news__inner">
         <p class="eyebrow" data-reveal>Actualités</p>
         <h2 class="title" id="news-title" data-reveal>La vie de la Cabane.</h2>
@@ -221,15 +227,20 @@
       </div>
     </section>
 
+    <!-- Contact: the facade (anthracite, crossed black slats, CAVE / BAR lettering) sets the tone. -->
     <section class="contact" id="nous-trouver" aria-labelledby="contact-title">
-      <svg class="torn torn--top torn--red" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 40 V18 L44 24 79 12 118 21 160 10 197 23 236 15 281 26 318 11 357 20 401 13 439 25 478 9 522 19 561 12 603 24 647 14 683 22 724 8 769 21 806 13 851 26 890 12 931 19 972 10 1011 23 1055 15 1093 24 1137 11 1178 20 1216 13 1260 25 1297 10 1339 21 1380 14 1440 22 V40Z" fill="#BE3427"/>
+      <svg class="torn torn--top torn--slate" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40 V18 L44 24 79 12 118 21 160 10 197 23 236 15 281 26 318 11 357 20 401 13 439 25 478 9 522 19 561 12 603 24 647 14 683 22 724 8 769 21 806 13 851 26 890 12 931 19 972 10 1011 23 1055 15 1093 24 1137 11 1178 20 1216 13 1260 25 1297 10 1339 21 1380 14 1440 22 V40Z" fill="#2A2725"/>
       </svg>
+      {{mikado}}
       <div class="contact__inner">
         <div class="contact__head">
-          <p class="eyebrow eyebrow--foam" data-reveal>Nous trouver</p>
+          <p class="eyebrow eyebrow--honey" data-reveal>Nous trouver</p>
           <h2 class="title" id="contact-title" data-reveal>On vous garde une place à Herbignac.</h2>
         </div>
+        <figure class="contact__facade" data-reveal="window">
+          <x-pic name="facade" alt="La façade de La Cabane à Mousse : lattes noires croisées, enseignes « Cave » et « Bar » orange autour du logo, parasols noirs et transats sur l'herbe." sizes="(min-width: 900px) 38vw, 92vw"></x-pic>
+        </figure>
         <div class="contact__grid">
           <div class="contact__item" data-reveal>
             <svg class="icon icon--lg"><use href="#i-pin"/></svg>
@@ -249,17 +260,10 @@
           </div>
         </div>
         <div class="contact__ctas" data-reveal>
-          <a class="btn btn--foam" href="{{site.phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg> Appeler la Cabane</a>
+          <a class="btn btn--honey" href="{{site.phoneHref}}"><svg class="icon"><use href="#i-phone"/></svg> Appeler la Cabane</a>
           <a class="btn btn--line" href="{{site.mapUrl}}" target="_blank" rel="noopener">Voir l'itinéraire <svg class="icon"><use href="#i-out"/></svg><span class="visually-hidden">(Google Maps, nouvel onglet)</span></a>
         </div>
       </div>
-      <svg class="contact__sun" viewBox="0 0 360 200" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-          <path d="M100 196a80 80 0 0 1 160 0"/><path d="M128 196a52 52 0 0 1 104 0"/>
-          <path d="M180 100V20M134 110 96 44M226 110l38-66M104 146 40 108M256 146l64-38M86 194H8M274 194h78"/>
-          <path d="M30 210h300" stroke-width="4"/>
-        </g>
-      </svg>
     </section>
   </main>
 

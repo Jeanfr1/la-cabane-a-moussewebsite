@@ -9,8 +9,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "images": "node scripts/build-images.mjs",
-    "measure": "python3 scripts/measure-scene.py",
-    "fonts": "python3 scripts/subset-fonts.py"
+    "measure": "python3 scripts/measure-pour.py",
+    "fonts": "python3 scripts/subset-fonts.py",
+    "photos": "python3 scripts/prepare-real-photos.py"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.5",

@@ -4,12 +4,12 @@ import '@fontsource/barlow-condensed/latin-700.css';
 import './styles/base.css';
 import './styles/hero.css';
 import './styles/sections.css';
-import { initHero } from './js/hero.js';
+import { initPour } from './js/pour.js';
 import { initReveal, initDrift } from './js/reveal.js';
 import { initNav, initHours } from './js/nav.js';
 
 initNav();
-initHero();
+initPour();
 initReveal();
 initDrift();
 initHours();

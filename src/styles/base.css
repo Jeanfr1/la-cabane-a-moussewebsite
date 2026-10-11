@@ -122,7 +122,11 @@ ul, ol { padding: 0; list-style: none; }
 .btn--red { background: var(--red); border-color: var(--red); color: var(--foam); }
 .btn--red:hover { background: var(--ink); border-color: var(--ink); }
 .btn--line { background: transparent; border-color: var(--foam); color: var(--foam); }
-.btn--line:hover { background: var(--foam); color: var(--red); }
+.btn--line:hover { background: var(--foam); color: var(--ink); }
+.btn--honey { background: var(--honey); border-color: var(--honey); color: var(--ink); }
+.btn--honey:hover { background: var(--foam); border-color: var(--foam); }
+.btn--ghost { background: rgb(24 18 15 / .35); border-color: rgb(255 243 213 / .7); color: var(--foam); }
+.btn--ghost:hover { background: var(--foam); border-color: var(--foam); color: var(--ink); }
 .btn .icon { transition: transform .2s var(--ease-out); }
 .btn:hover .icon { transform: translateX(3px); }
 

@@ -29,7 +29,7 @@ export const jsonLd = {
   description: `${site.descriptor}. Location de tireuses.`,
   url: site.url,
   telephone: site.phoneIntl,
-  image: `${site.url}/og-v1.jpg`,
+  image: `${site.url}/og-v2.jpg`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.street,

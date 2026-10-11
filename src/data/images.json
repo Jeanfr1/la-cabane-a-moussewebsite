@@ -1,73 +1,126 @@
 {
-  "scene-before": {
-    "w": 1024,
-    "h": 1536,
+  "pour-woman": {
+    "w": 759,
+    "h": 831,
     "widths": [
-      720,
-      1024
+      400,
+      759
     ],
     "avif": [
-      "/img/scene-before-v1-720.avif",
-      "/img/scene-before-v1-1024.avif"
+      "/img/pour-woman-v1-400.avif",
+      "/img/pour-woman-v1-759.avif"
     ],
     "webp": [
-      "/img/scene-before-v1-720.webp",
-      "/img/scene-before-v1-1024.webp"
+      "/img/pour-woman-v1-400.webp",
+      "/img/pour-woman-v1-759.webp"
     ]
   },
-  "scene-after": {
-    "w": 1024,
-    "h": 1536,
+  "pour-man": {
+    "w": 972,
+    "h": 519,
     "widths": [
-      720,
-      1024
+      500,
+      972
     ],
     "avif": [
-      "/img/scene-after-v1-720.avif",
-      "/img/scene-after-v1-1024.avif"
+      "/img/pour-man-v1-500.avif",
+      "/img/pour-man-v1-972.avif"
     ],
     "webp": [
-      "/img/scene-after-v1-720.webp",
-      "/img/scene-after-v1-1024.webp"
+      "/img/pour-man-v1-500.webp",
+      "/img/pour-man-v1-972.webp"
     ]
   },
-  "scene-stream": {
-    "w": 344,
-    "h": 720,
+  "pour-stream": {
+    "w": 233,
+    "h": 693,
     "widths": [
-      344
+      120,
+      233
     ],
     "avif": [
-      "/img/scene-stream-v1-344.avif"
+      "/img/pour-stream-v1-120.avif",
+      "/img/pour-stream-v1-233.avif"
     ],
     "webp": [
-      "/img/scene-stream-v1-344.webp"
+      "/img/pour-stream-v1-120.webp",
+      "/img/pour-stream-v1-233.webp"
     ]
   },
-  "hero-sky": {
-    "w": 900,
-    "h": 744,
+  "hero-bar": {
+    "w": 2008,
+    "h": 1520,
     "widths": [
-      900
+      900,
+      1400,
+      2008
     ],
     "avif": [
-      "/img/hero-sky-v1-900.avif"
+      "/img/hero-bar-v1-900.avif",
+      "/img/hero-bar-v1-1400.avif",
+      "/img/hero-bar-v1-2008.avif"
     ],
     "webp": [
-      "/img/hero-sky-v1-900.webp"
+      "/img/hero-bar-v1-900.webp",
+      "/img/hero-bar-v1-1400.webp",
+      "/img/hero-bar-v1-2008.webp"
     ]
   },
-  "scene-bridge": {
-    "w": 266,
-    "h": 512,
+  "counter": {
+    "w": 1936,
+    "h": 2200,
     "widths": [
-      266
+      640,
+      1024,
+      1400
     ],
     "avif": [
-      "/img/scene-bridge-v1-266.avif"
+      "/img/counter-v1-640.avif",
+      "/img/counter-v1-1024.avif",
+      "/img/counter-v1-1400.avif"
     ],
     "webp": [
-      "/img/scene-bridge-v1-266.webp"
+      "/img/counter-v1-640.webp",
+      "/img/counter-v1-1024.webp",
+      "/img/counter-v1-1400.webp"
+    ]
+  },
+  "cave-real": {
+    "w": 1900,
+    "h": 2176,
+    "widths": [
+      640,
+      1024,
+      1400
+    ],
+    "avif": [
+      "/img/cave-real-v1-640.avif",
+      "/img/cave-real-v1-1024.avif",
+      "/img/cave-real-v1-1400.avif"
+    ],
+    "webp": [
+      "/img/cave-real-v1-640.webp",
+      "/img/cave-real-v1-1024.webp",
+      "/img/cave-real-v1-1400.webp"
+    ]
+  },
+  "facade": {
+    "w": 1900,
+    "h": 2360,
+    "widths": [
+      640,
+      1024,
+      1400
+    ],
+    "avif": [
+      "/img/facade-v1-640.avif",
+      "/img/facade-v1-1024.avif",
+      "/img/facade-v1-1400.avif"
+    ],
+    "webp": [
+      "/img/facade-v1-640.webp",
+      "/img/facade-v1-1024.webp",
+      "/img/facade-v1-1400.webp"
     ]
   },
   "amizade": {
@@ -87,25 +140,6 @@
       "/img/amizade-v1-640.webp",
       "/img/amizade-v1-1024.webp",
       "/img/amizade-v1-1536.webp"
-    ]
-  },
-  "cave": {
-    "w": 1536,
-    "h": 1024,
-    "widths": [
-      640,
-      1024,
-      1536
-    ],
-    "avif": [
-      "/img/cave-v1-640.avif",
-      "/img/cave-v1-1024.avif",
-      "/img/cave-v1-1536.avif"
-    ],
-    "webp": [
-      "/img/cave-v1-640.webp",
-      "/img/cave-v1-1024.webp",
-      "/img/cave-v1-1536.webp"
     ]
   },
   "splash": {
@@ -145,9 +179,6 @@
       "/img/location-v1-1024.webp",
       "/img/location-v1-1536.webp"
     ]
-  },
-  "scene-keep": {
-    "src": "/img/scene-keep-v1.png"
   },
   "logo": {
     "w": 1030,
