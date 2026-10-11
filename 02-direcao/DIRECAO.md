@@ -1,22 +1,41 @@
-# Ça mousse. Ça vit.
+# Le goût d’être ensemble.
 
-## Sistema visual
-Toda a paleta nasce da logo: mel #FFC13C, laranja #EF7A18, vermelho da faixa #BE3427, espuma #FFF3D5, preto do contorno #1C1714. Não usar verde como fundo, tinta de interface ou cor de marca. Vegetação incidental de fotografia não define a paleta.
-Fotografia de sol, brilho do vidro, condensação, amigos e perspectiva inesperada. Texturas de papel claras; luz âmbar; sombras quentes. Evitar interiores escuros como estética dominante.
+## Point de départ : le vrai bar
 
-## Direção de arte
-A referência do recipiente gigante orienta literalmente a cena principal: uma pessoa acima segurando a cerveja inclinada, fio de bebida atravessando a composição, pessoa de boca aberta abaixo recebendo o fio. A escala é surreal publicitária. O percurso do líquido funciona como eixo vertical de navegação; a leitura acompanha a ação sem ser interrompida.
-As referências de amigos orientam fotos baixas, garrafas próximas da câmera e olhares naturais. A marca aparece nos rótulos de todas as garrafas visíveis dos assets de campanha. Não inserir marcas concorrentes nem rótulos vazios.
+Les photos fournies montrent des murs sombres, du métal noir, des surfaces en bois, de grands meubles de cave et des luminaires chauds. La façade porte les mots CAVE et BAR en orange et la logo de l’entreprise. La terrasse et les transats complètent le lieu. Ce vocabulaire guide la refonte.
 
-## Tipografia e UI
-Display expressivo: Fraunces Black ou Cooper-style licenciado, com Georgia Bold de fallback. Interface: Barlow Condensed para labels e Inter para corpo, com Arial de fallback. Baixar e licenciar na implementação; estudo offline usa fontes locais de sistema.
-Headline em preto sobre mel/espuma, botões em preto com texto espuma. Vermelho como superfície com texto espuma. Não usar amarelo como texto pequeno sobre creme. CTA grande, foco visível e texto real, nunca embutido somente na foto.
+## Palette
 
-## Composição
-Hero desktop combina manchete à esquerda e ação humana acima/abaixo no lado direito. Mobile preserva a relação vertical, sem esconder a pessoa inferior. Header laranja com logo; seções em espuma, laranja e vermelho, com curvas ou rasgos discretos entre capítulos. Fotos de amizade em grandes janelas, cave com campanha rotulada, locação clara e aberta. Evitar sucessão de cards genéricos iguais.
+| Rôle | Couleur | Application |
+| --- | --- | --- |
+| Graphite | #191918 | Hero, navigation et pied de page |
+| Charbon | #292824 | Section cave et plans secondaires |
+| Bois | #8A5F35 | Titres et détails sur fond clair |
+| Bière | #F3B43F | Boutons, lumière et section location |
+| Orange | #E67F22 | Accent provenant de la logo et de la façade |
+| Mousse | #F5EBDD | Sections éditoriales et texte clair |
 
-## Logo
-PNG RGBA existente preservado. Área livre 10% da largura. Mínimo sugerido 110 px de altura; menu mobile pode usar logo a 84 px com nome acessível. Letras brancas têm contorno preto e funcionam sobre laranja/âmbar. Não distorcer ou gerar nova identidade sem necessidade.
+La lumière estivale est exprimée par les reflets ambrés, la terrasse réelle et le moment entre amis. Le lieu reste une cave et un bar de bois et de métal.
 
-## Conteúdo
-O calor vem da direção visual e das pessoas, não de promessas inventadas. Não anunciar preços, agenda futura, promoções ou cervejas fabricadas pela empresa sem confirmação.
+## Hero
+
+Trois bouteilles froides portant la marque se rencontrent devant des amis adultes. Gros plan immersif, verre ambré, condensation, sourire et lumière de comptoir. Sur desktop, les bouteilles occupent la droite ; le titre vivant occupe la gauche. Sur mobile, le toast occupe le haut, le titre et les actions le bas.
+
+Titre : « LE GOÛT D’ÊTRE ENSEMBLE. » Les mots ENSEMBLE et les actions portent l’ambre de la marque. Typographie massive et condensée, grille nette, cadres photographiques sobres et généreux espacements.
+
+## Mouvement
+
+Trois chapitres au défilement : la campagne, le gros plan détaché du toast, puis une ouverture progressive sur la photographie réelle de la salle. La transition est une composition 2D. Aucun son automatique, aucune simulation de liquide et aucun blocage de la navigation. Le bouton peut désactiver le mouvement. Le réglage système de mouvement réduit est respecté.
+
+## Photographies
+
+La salle, le comptoir, la cave et la façade sont les fichiers fournis par le client. Le HTML les cadre sans réécrire leurs pixels. La campagne du hero est distincte des photographies documentaires. Les planches de direction montrent leur mise en page ; elles ne sont pas des captures de navigateur.
+
+## Référence de comparaison
+
+Le client a demandé une inspiration chez-tonton-cinema. Le lien a été fourni mais son ouverture a été refusée. Le mouvement spécifique de cette référence reste à vérifier avec une capture vidéo. La présente direction est une proposition originale pour la Cabane.
+
+
+## Inspiration complémentaire : Scrolltide
+
+Descriptions publiques consultées : Firnlight (isolation du sujet), Aperture (ouverture du cadre), Cinder (lumière ambrée et typographie). Adaptation au scénario original de la Cabane : amis, bouteilles en gros plan, salle réelle. Voir `00-referencias/SCROLLTIDE.md` à la racine du kit. Aucun code, prompt premium ou asset copié ; il s’agit d’une composition 2D propre au projet.

@@ -1,7 +1,7 @@
 {
   "name": "La Cabane à Mousse Herbignac",
   "descriptor": "Location de tireuses, Cave & Bar à Bières en Brière",
-  "concept": "Ça mousse. Ça vit.",
+  "concept": "Le goût d’être ensemble.",
   "address": "21 avenue de la Monneraye (RD33), 44410 Herbignac",
   "phone": "07 60 21 77 18",
   "phone_link": "tel:+33760217718",
@@ -24,12 +24,29 @@
     "availability": "by_contact"
   },
   "palette": {
-    "honey": "#FFC13C",
-    "orange": "#EF7A18",
-    "red": "#BE3427",
-    "foam": "#FFF3D5",
-    "ink": "#1C1714"
+    "graphite": "#191918",
+    "charcoal": "#292824",
+    "wood": "#8A5F35",
+    "beer": "#F3B43F",
+    "orange": "#E67F22",
+    "foam": "#F5EBDD",
+    "white": "#FFFFFF"
   },
   "factual_source": "07-integracao/FONTES.md",
-  "campaign_labels": "La Cabane à Mousse logo; conceptual packaging, not actual own-brew inventory"
+  "campaign_labels": "La Cabane à Mousse logo; conceptual packaging, not actual own-brew inventory",
+  "reference": {
+    "url": "https://chez-tonton-pontchateau5.vercel.app",
+    "status": "Référence demandée ; consultation navigateur refusée. Analyse exacte du mouvement en attente d’une capture vidéo."
+  },
+  "version": "KIT-COMPLET-V3",
+  "scrolltide_reference": {
+    "url": "https://www.scrolltide.co/templates",
+    "public_descriptions_reviewed": [
+      "Firnlight",
+      "Aperture",
+      "Cinder"
+    ],
+    "adaptation": "Isolation des bouteilles, ouverture du cadre vers le lieu réel, lumière ambrée",
+    "assets_or_code_copied": false
+  }
 }

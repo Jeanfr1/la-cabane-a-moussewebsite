@@ -1,0 +1,107 @@
+{
+  "purpose": "Implementar a direção V3 no projeto existente",
+  "destination_note": "Caminhos sugeridos. Adaptar à stack e ao repositório; os caminhos source são relativos à raiz deste kit.",
+  "copy_assets": [
+    {
+      "source": "01-identidade/logo-transparente.png",
+      "suggested_destination": "public/cabane-v3/logo.png",
+      "use": "logo existente"
+    },
+    {
+      "source": "03-hero/brinde-cinematographique.png",
+      "suggested_destination": "public/cabane-v3/hero/brinde-desktop.png",
+      "use": "campanha desktop"
+    },
+    {
+      "source": "03-hero/brinde-mobile.png",
+      "suggested_destination": "public/cabane-v3/hero/brinde-mobile.png",
+      "use": "campanha mobile"
+    },
+    {
+      "source": "05-camadas/brinde-premier-plan.png",
+      "suggested_destination": "public/cabane-v3/hero/brinde-premier-plan.png",
+      "use": "grosso plano independente no desktop"
+    },
+    {
+      "source": "04-photos-originales/salle-originale.png",
+      "suggested_destination": "public/cabane-v3/photos/salle.png",
+      "use": "revelação da sala real"
+    },
+    {
+      "source": "04-photos-originales/comptoir-original.png",
+      "suggested_destination": "public/cabane-v3/photos/comptoir.png",
+      "use": "seção Le bar"
+    },
+    {
+      "source": "04-photos-originales/facade-terrasse-originale.png",
+      "suggested_destination": "public/cabane-v3/photos/terrasse.png",
+      "use": "seção La terrasse"
+    },
+    {
+      "source": "04-photos-originales/cave-originale.png",
+      "suggested_destination": "public/cabane-v3/photos/cave.png",
+      "use": "seção La cave"
+    },
+    {
+      "source": "08-estudo/fonts/NimbusSansNarrow-Bold.woff",
+      "suggested_destination": "public/cabane-v3/fonts/NimbusSansNarrow-Bold.woff",
+      "use": "fonte condensada local"
+    },
+    {
+      "source": "08-estudo/fonts/LICENCE.txt",
+      "suggested_destination": "public/cabane-v3/fonts/LICENCE.txt",
+      "use": "licença da fonte"
+    }
+  ],
+  "replace_usage": [
+    {
+      "old": "03-hero/hero-desktop.png da V2",
+      "new": "campanha desktop + título e botões em HTML"
+    },
+    {
+      "old": "03-hero/hero-mobile.png da V2",
+      "new": "campanha portrait + texto HTML responsivo"
+    },
+    {
+      "old": "pessoa-superior.png, pessoa-inferior.png, fluxo-fotografico.png",
+      "new": "motionAt(), grosso plano independente e revelação da sala"
+    },
+    {
+      "old": "04-secoes/amizade.png da V2 para representar o bar",
+      "new": "comptoir-original.png e facade-terrasse-originale.png"
+    },
+    {
+      "old": "04-secoes/cave-rotulada.png da V2 para representar estoque real",
+      "new": "cave-originale.png"
+    },
+    {
+      "old": "04-secoes/locacao-verao.png da V2 como equipamento real",
+      "new": "seção editorial de três passos e contato; sem equipamento inventado"
+    },
+    {
+      "old": "paleta verde e tema anterior",
+      "new": "tokens de grafite, carvão, madeira, cerveja, laranja e espuma"
+    }
+  ],
+  "retire_from_active_page": [
+    "componentes de pessoas despejando e recebendo cerveja",
+    "SVG ou máscara de fluxo antigo",
+    "coordenadas e callbacks da timeline antiga",
+    "assets gerados antigos usados como fotos do estabelecimento"
+  ],
+  "cleanup": "Remover arquivos antigos somente depois de confirmar que não existem referências no projeto; preservar fontes e identidade reais.",
+  "do_not_use_as_live_hero": [
+    "03-hero/hero-desktop.jpg",
+    "03-hero/hero-mobile.jpg",
+    "02-direcao/mockup-desktop.jpg",
+    "02-direcao/mockup-mobile.jpg",
+    "06-roteiros/apercu-animation.mp4"
+  ],
+  "functional_reference": [
+    "08-estudo/index.html",
+    "08-estudo/portal.css",
+    "08-estudo/portal.js"
+  ],
+  "public_language": "fr",
+  "reference_chez_tonton": "Comparação precisa pendente de gravação; consulta recusada."
+}

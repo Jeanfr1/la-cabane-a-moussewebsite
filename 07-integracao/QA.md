@@ -1,12 +1,12 @@
-# Critérios de aprovação
+# Vérification V3
 
-- Paleta derivada exclusivamente da logo; nenhum fundo ou CTA verde.
-- Hero mostra pessoa acima com garrafa inclinada e pessoa de boca aberta abaixo. O fio chega à boca, não a um copo.
-- Versão mobile mantém as duas pessoas e a conexão.
-- Toda garrafa de campanha visível tem rótulo com logo, sem marcas concorrentes ou etiquetas vazias.
-- Imagens aquecidas, convidativas, estivais e de amizade, coerentes com referências.
-- Não apresentar campanha como prova do estoque, cerveja própria, clientes ou instalações.
-- Logo com alfa preservado e sem distorção; texto HTML acessível fora das imagens.
-- Testar 360/390/768/1440 px, contraste, tabulação, foco, zoom 200% e reduced-motion.
-- Telefones e mapa reais; locação por consulta; formulário somente com envio implementado.
-- Confirmar agenda e horários especiais; sem eventos antigos reaproveitados como futuros.
+- Kit autonome ; liens vers les images et fichiers locaux contrôlés.
+- Quatre captures photographiques du lieu identiques aux uploads sources ; SHA-256 conservés dans la provenance.
+- Hero paysage et portrait, logo et premier plan ouverts et inspectés ; PNG avec transparence réelle.
+- Textes HTML en français, coordonnées cohérentes avec les sources, pas de prix ou stock fictifs.
+- États du mouvement vérifiés : début, fondu, brinde, ouverture et fin ; progression bornée.
+- Navigation mobile, fermeture clavier, contrôle de mouvement et préférence système exercés en environnement de test JavaScript.
+- Guide PDF rendu et revu ; titres, images et marges inspectés. Maquettes de composition distinctes d’une capture navigateur.
+- Archive contrôlée, extraite et comparée aux masters ; index complet et empreintes inclus.
+
+Limites : rendu HTML dans un navigateur réel non vérifié dans cet environnement. La consultation de la référence Chez Tonton a été refusée ; son mouvement spécifique n’a pas été analysé. La correspondance précise reste à vérifier avec une vidéo du client.

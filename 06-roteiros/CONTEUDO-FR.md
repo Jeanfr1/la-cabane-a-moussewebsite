@@ -1,52 +1,53 @@
-# Copy canonique française
+# Textes français V3
 
-## Menu
-Le bar · La cave · Vos événements · Les rendez-vous · Nous trouver
-CTA : Préparer mon événement
+## Navigation
+Le bar · La cave · Les tireuses · Nous trouver
+On se retrouve ?
 
 ## Hero
-LA CABANE À MOUSSE · HERBIGNAC
-Ça mousse. Ça vit.
-Des bières à découvrir, des amis à retrouver et de beaux moments à partager.
-Entrer dans la Cabane
-Préparer mon événement
-CAVE & BAR À BIÈRES EN BRIÈRE · LOCATION DE TIREUSES
+HERBIGNAC · CAVE & BAR À BIÈRES EN BRIÈRE
+LE GOÛT D’ÊTRE ENSEMBLE.
+Des bières à découvrir. Des amis à retrouver.
+Entrer dans la Cabane · Louer une tireuse
 
-## Bar · scène d'amitié
-Les bons moments commencent ici.
-On se retrouve, on échange, on découvre. Bienvenue à La Cabane à Mousse, à Herbignac.
+## Bar
+C’EST ICI QUE ÇA SE PASSE.
+Un comptoir, une terrasse, des amis. À Herbignac, la Cabane est un lieu pour se retrouver et prendre le temps de partager.
 Passer nous voir
 
-## Cave · campagne de bouteilles
-Une cave. Mille envies de découvrir.
-Explorez la sélection de la cave et échangez avec l'équipe pour vos prochaines découvertes.
-Les références disponibles changent : renseignez-vous auprès de l'établissement.
-Découvrir la cave
-Ne pas publier de nombre réel de références à partir de ce titre créatif.
+## Terrasse
+LA TERRASSE. LE COMPTOIR. VOTRE RENDEZ-VOUS.
+21 avenue de la Monneraye · Herbignac
+Trouver la Cabane
 
-## Location · fête et soleil
-Vos événements prennent mousse.
-Un anniversaire, une réception ou un rendez-vous entre collègues ? Parlons de votre location de tireuse.
-01 · Votre date — Dites-nous quand et où vous organisez votre événement.
+## Cave
+LE GOÛT DE LA DÉCOUVERTE.
+Une envie, une curiosité, une occasion à célébrer ? Explorez la cave et échangez avec l’équipe pour trouver votre prochaine découverte.
+Les références disponibles évoluent. Demandez la sélection du moment directement à la Cabane.
+Demander conseil
+
+## Location
+VOTRE FÊTE. NOTRE MOUSSE.
+Un anniversaire, une réception, un moment entre collègues ? Parlons de votre projet et de la location d’une tireuse.
+01 · Votre date — Quand et où souhaitez-vous organiser votre événement ?
 02 · Vos envies — Échangeons sur le matériel et les bières disponibles.
-03 · Votre projet — Confirmez les modalités avec l'équipe.
-Parler de mon événement
-Disponibilités, matériel, tarifs et conditions confirmés directement par l'établissement.
+03 · On en parle — Confirmez les modalités directement avec l’équipe.
+Préparer mon événement
+Disponibilités, matériel, tarifs, caution et conditions de location à confirmer auprès de l’établissement.
 
 ## Actualités
-La vie de la Cabane.
-Retrouvez nos actualités et les prochains rendez-vous sur nos réseaux.
-Voir les actualités
-Ne pas publier de flyer passé comme événement futur.
+ON GARDE LE CONTACT.
+Les nouvelles de la Cabane, les moments partagés, les prochains rendez-vous.
+Les actualités sur Instagram
 
 ## Contact
-On vous garde une place à Herbignac.
-21 avenue de la Monneraye (RD33), 44410 Herbignac
+À TOUT À L’HEURE.
+La Cabane à Mousse · 21 avenue de la Monneraye (RD33), 44410 Herbignac
 07 60 21 77 18
-Lundi à vendredi : 11h–21h · Samedi : 10h–21h · Dimanche : fermé.
-Horaires particuliers à confirmer auprès de l'établissement.
-Appeler la Cabane · Voir l'itinéraire
+Lundi–vendredi : 11h–21h · Samedi : 10h–21h · Dimanche : fermé.
+Horaires exceptionnels : contactez l’équipe.
+Voir l’itinéraire
 
-## Footer
-La Cabane à Mousse Herbignac · Cave & Bar à Bières en Brière
-L'abus d'alcool est dangereux pour la santé. À consommer avec modération.
+## Pied de page
+Cave & Bar à Bières en Brière · Location de tireuses · Herbignac
+L’abus d’alcool est dangereux pour la santé. À consommer avec modération.

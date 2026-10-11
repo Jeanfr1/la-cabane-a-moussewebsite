@@ -1,5 +1,24 @@
 [
   {
+    "file": "00-referencias/informations-fournies.jpg",
+    "width": 1800,
+    "height": 2640,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "référence du client"
+  },
+  {
+    "file": "00-referencias/logo-source.png",
+    "width": 1324,
+    "height": 1002,
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ],
+    "role": "référence du client"
+  },
+  {
     "file": "01-identidade/logo-transparente.png",
     "width": 1309,
     "height": 1201,
@@ -7,99 +26,126 @@
     "alpha_range": [
       0,
       255
-    ]
+    ],
+    "role": "reconstruction de la logo fournie"
   },
   {
-    "file": "02-direcao/mockup-desktop.png",
+    "file": "01-identidade/prancha-identidade.jpg",
+    "width": 1600,
+    "height": 1000,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "composition documentaire"
+  },
+  {
+    "file": "02-direcao/mockup-desktop.jpg",
+    "width": 1600,
+    "height": 4210,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "composition documentaire"
+  },
+  {
+    "file": "02-direcao/mockup-mobile.jpg",
+    "width": 780,
+    "height": 4350,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "composition documentaire"
+  },
+  {
+    "file": "03-hero/brinde-cinematographique.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "campagne créée avec imagegen"
+  },
+  {
+    "file": "03-hero/brinde-mobile.png",
     "width": 1024,
     "height": 1536,
     "mode": "RGB",
-    "alpha_range": null
+    "alpha_range": null,
+    "role": "campagne créée avec imagegen"
   },
   {
-    "file": "02-direcao/mockup-mobile.png",
-    "width": 724,
-    "height": 2172,
+    "file": "03-hero/hero-desktop.jpg",
+    "width": 1600,
+    "height": 1030,
     "mode": "RGB",
-    "alpha_range": null
+    "alpha_range": null,
+    "role": "composition documentaire"
   },
   {
-    "file": "03-hero/hero-desktop.png",
+    "file": "03-hero/hero-mobile.jpg",
+    "width": 780,
+    "height": 1460,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "composition documentaire"
+  },
+  {
+    "file": "04-photos-originales/cave-originale.png",
+    "width": 810,
+    "height": 1006,
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ],
+    "role": "photographie originale fournie, fichier intact"
+  },
+  {
+    "file": "04-photos-originales/comptoir-original.png",
+    "width": 826,
+    "height": 1006,
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ],
+    "role": "photographie originale fournie, fichier intact"
+  },
+  {
+    "file": "04-photos-originales/facade-terrasse-originale.png",
+    "width": 806,
+    "height": 1002,
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ],
+    "role": "photographie originale fournie, fichier intact"
+  },
+  {
+    "file": "04-photos-originales/salle-originale.png",
+    "width": 1348,
+    "height": 994,
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ],
+    "role": "photographie originale fournie, fichier intact"
+  },
+  {
+    "file": "05-camadas/brinde-premier-plan.png",
     "width": 1536,
     "height": 1024,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "03-hero/hero-mobile.png",
-    "width": 1024,
-    "height": 1536,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "04-secoes/amizade.png",
-    "width": 1536,
-    "height": 1024,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "04-secoes/cave-rotulada.png",
-    "width": 1536,
-    "height": 1024,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "04-secoes/locacao-verao.png",
-    "width": 1536,
-    "height": 1024,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "04-secoes/produto-splash.png",
-    "width": 1536,
-    "height": 1024,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "05-camadas/cena-sem-fluxo.png",
-    "width": 1024,
-    "height": 1536,
-    "mode": "RGB",
-    "alpha_range": null
-  },
-  {
-    "file": "05-camadas/fluxo-fotografico.png",
-    "width": 1024,
-    "height": 1536,
     "mode": "RGBA",
     "alpha_range": [
       0,
       254
-    ]
+    ],
+    "role": "premier plan créé avec imagegen ; gros plan autonome"
   },
   {
-    "file": "05-camadas/pessoa-inferior.png",
-    "width": 1024,
-    "height": 1536,
-    "mode": "RGBA",
-    "alpha_range": [
-      0,
-      254
-    ]
-  },
-  {
-    "file": "05-camadas/pessoa-superior.png",
-    "width": 1024,
-    "height": 1536,
-    "mode": "RGBA",
-    "alpha_range": [
-      0,
-      254
-    ]
+    "file": "06-roteiros/storyboard.jpg",
+    "width": 1800,
+    "height": 1030,
+    "mode": "RGB",
+    "alpha_range": null,
+    "role": "composition documentaire"
   }
 ]

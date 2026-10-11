@@ -1,27 +1,22 @@
-# Animação principal · pessoa acima → boca aberta abaixo
+# Le rendez-vous → Le tchin → La vraie Cabane
 
-## Mecânica visual
-A base é **cena-sem-fluxo.png**, com as duas pessoas, garrafa rotulada e boca aberta. O estado final é **hero-mobile.png**. O estudo revela a fotografia final dentro de uma máscara que acompanha o corredor da bebida; por isso os pontos de saída do gargalo e de chegada à boca permanecem na mesma coordenada. Ao concluir a queda, um crossfade para a foto final inteira integra o splash da boca e da barba.
-Este é o gesto solicitado na referência. Não há copo no hero.
+Animation au défilement, originale pour cette marque. Le lien Chez Tonton demandé n’a pas pu être inspecté ; comparaison exacte en attente de capture vidéo.
 
-## Coordenadas da cena nativa
-Canvas 1024 × 1536. Gargalo: aproximadamente (755, 795). Boca recebendo: aproximadamente (790, 1135). O SVG usa o mesmo viewBox em qualquer tamanho. Nunca usar object-fit: cover na cena principal; ele pode remover uma das pessoas. Usar meet/contain e reservar texto na área livre à esquerda.
+| Progrès | Scène | Comportement |
+| --- | --- | --- |
+| 0–18 % | Le rendez-vous | Hero avec amis et bouteilles ; titre et actions lisibles |
+| 18–37 % | Passage au gros plan | Le titre s’efface ; fondu de la campagne vers le premier plan transparent |
+| 37–64 % | Le tchin | Les bouteilles s’approchent légèrement ; reflet ambré discret au contact |
+| 64–76 % | La porte s’ouvre | La photo réelle de la salle apparaît dans une ouverture centrale |
+| 76–100 % | La vraie Cabane | Le cadre s’élargit jusqu’au plein écran ; la salle conduit aux sections réelles |
 
-## Timeline
-0–15% · entrada da composição, ambas as pessoas visíveis; título e CTA disponíveis.
-15–25% · preparação: aproximação da cena inteira 1.00→1.025, sem mexer em braços ou separar a pessoa da garrafa. Nenhuma rotação artificial de anatomia.
-25–60% · o líquido aparece a partir do gargalo, avançando até a boca; máscara vertical com extensão de 490 px sobre o corredor fotográfico. Destacar o percurso com uma linha de brilho discreta, sem deslocar o fluxo.
-60–75% · contato: integrar o splash na boca e o estado final via crossfade, 450–650 ms na implementação.
-75–90% · leitura da marca e conexão completa mantida por um breve beat; fotografia inteira com brilho de sol.
-90–100% · liberar o capítulo de amizade, sem bloquear a ação de contato.
+Desktop : scène sticky d’environ une hauteur d’écran, section de 190vh. Le premier plan est un gros plan autonome, pas une extraction pixel-parfaite ; le fond disparaît au fondu. Mobile : 165vh, campagne portrait, déplacement réduit et sans calque indépendant. La salle réelle est révélée dans les deux cas.
 
-## Estudo interativo
-08-estudo/index.html usa rolagem normal para atualizar a progressão, slider manual e leitura de 12 segundos. Play pode ser pausado, não repete automaticamente. Os controles permanecem fora da foto. A composição mobile mantém as duas pessoas e a conexão; não substitui a ação por garrafa e copo.
-A demo é animação 2D com fotografia e máscara, não vídeo de pessoas se movimentando e não simulação 3D de cerveja. Para vídeo final, filmar/renderizar atores e líquido com o mesmo enquadramento e preservar o rótulo.
+`motionAt(p)` dans `08-estudo/portal.js` définit les états ; `timeline.json` les décrit. Les transformations sont un zoom, un fondu et un cadre qui s’ouvre, pas une simulation physique ni un film.
 
-## Camadas opcionais
-Pessoa superior, pessoa inferior e fluxo transparente são recortes gerados para variações de montagem. Não são máscaras pixel a pixel da foto-mestre; use a dupla base/final do estudo para preservar alinhamento exato. O fluxo isolado tem extensão diferente e requer alinhamento manual pelos pontos de boca/gargalo.
+Le réglage système `prefers-reduced-motion` remplace la séquence par le hero statique. Le bouton de désactivation fait de même. Le système de défilement reste natif ; les actions fonctionnent dès l’état initial. Aucun son automatique. La scène n’empêche pas de passer directement au contenu.
 
-## Acessibilidade e performance
-prefers-reduced-motion: estado final estático, ambas as pessoas presentes, sem sticky prolongado. Slider com label e output; botões com foco, play/pause, suspensão ao ocultar aba. Conteúdo textual fora da imagem. requestAnimationFrame e transform/opacity; evitar scroll-jacking.
-Na implementação, derivar WebP/AVIF e limitar hero prioritário. Não carregar todas as campanhas no primeiro frame.
+
+## Inspiration complémentaire : Scrolltide
+
+Descriptions publiques consultées : Firnlight (isolation du sujet), Aperture (ouverture du cadre), Cinder (lumière ambrée et typographie). Adaptation au scénario original de la Cabane : amis, bouteilles en gros plan, salle réelle. Voir `00-referencias/SCROLLTIDE.md` à la racine du kit. Aucun code, prompt premium ou asset copié ; il s’agit d’une composition 2D propre au projet.
