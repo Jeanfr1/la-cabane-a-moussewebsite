@@ -3,22 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "One-page site for La Cabane \u00e0 Mousse, cave & bar \u00e0 bi\u00e8res in Herbignac (Bri\u00e8re).",
+  "description": "One-page site for La Cabane à Mousse, cave & bar à bières in Herbignac (Brière): Le goût d'être ensemble.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "images": "node scripts/build-images.mjs",
-    "measure": "python3 scripts/measure-pour.py",
-    "fonts": "python3 scripts/subset-fonts.py",
-    "photos": "python3 scripts/prepare-real-photos.py"
+    "fonts": "python3 scripts/subset-fonts.py"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.2.5",
-    "@fontsource/barlow-condensed": "^5.2.5"
+    "@fontsource-variable/inter": "^5.2.5"
   },
   "devDependencies": {
-    "@fontsource-variable/fraunces": "^5.2.5",
     "sharp": "^0.35.5",
     "vite": "~6.4.4"
   },

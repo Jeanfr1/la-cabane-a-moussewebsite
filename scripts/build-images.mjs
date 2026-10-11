@@ -2,8 +2,7 @@
 // Derives every web image from the kit masters (which stay untouched).
 // Output: public/img/<name>-v<rev>-<width>.{avif,webp} + src/data/images.json
 // The cache is immutable: to replace an image, bump its `rev` so the file name changes.
-// assets-src/ is written by scripts/measure-pour.py and scripts/prepare-real-photos.py.
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,41 +12,46 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'public/img');
 const kit = (p) => path.join(root, p);
 
+// The four venue photos are screenshots: each one is framed to the useful rectangle the kit
+// documents (07-integracao/provenance-photos.json), which leaves the capture's interface out.
+const provenance = JSON.parse(await readFile(kit('07-integracao/provenance-photos.json'), 'utf8'));
+const rect = (file) => {
+  const { x, y, width, height } = provenance.find((p) => p.file === file).display_rect;
+  return { left: x, top: y, width, height };
+};
+
 // alpha: keep transparency; widths: responsive variants (never above the source);
-// tune: optional sharp pipeline applied before resizing (colour grade, blur)
+// crop: rectangle taken from the master before resizing
 const jobs = [
-  // hero pour rig (scripts/measure-pour.py)
-  { name: 'pour-woman', src: 'assets-src/pour-woman.png', rev: 1, widths: [400, 759], alpha: true },
-  { name: 'pour-man', src: 'assets-src/pour-man.png', rev: 1, widths: [500, 972], alpha: true },
-  { name: 'pour-stream', src: 'assets-src/pour-stream.png', rev: 1, widths: [120, 233], alpha: true },
-  // the real venue (scripts/prepare-real-photos.py)
-  {
-    name: 'hero-bar', src: 'assets-src/real-interior.png', rev: 1, widths: [900, 1400, 2008],
-    // dim, warm and slightly soften the room so the people in front stay the subject
-    tune: (img) => img.blur(0.9).linear([1.04, 0.98, 0.88], [6, 0, -8]).modulate({ brightness: 0.86, saturation: 1.08 }),
-  },
-  { name: 'counter', src: 'assets-src/real-counter.png', rev: 1, widths: [640, 1024, 1400] },
-  { name: 'cave-real', src: 'assets-src/real-cave.png', rev: 1, widths: [640, 1024, 1400] },
-  { name: 'facade', src: 'assets-src/real-facade.png', rev: 1, widths: [640, 1024, 1400] },
-  // campaign images from the kit
-  { name: 'amizade', src: '04-secoes/amizade.png', rev: 1, widths: [640, 1024, 1536] },
-  { name: 'splash', src: '04-secoes/produto-splash.png', rev: 1, widths: [640, 1024, 1536] },
-  { name: 'location', src: '04-secoes/locacao-verao.png', rev: 1, widths: [640, 1024, 1536] },
+  // hero campaign (03-hero): landscape above 850 px, portrait below
+  { name: 'brinde', src: '03-hero/brinde-cinematographique.png', rev: 1, widths: [960, 1536] },
+  { name: 'brinde-mobile', src: '03-hero/brinde-mobile.png', rev: 1, widths: [640, 1024] },
+  // chapter 2 foreground (05-camadas), desktop only
+  { name: 'brinde-premier-plan', src: '05-camadas/brinde-premier-plan.png', rev: 1, widths: [960, 1536], alpha: true },
+  // the real venue (04-photos-originales)
+  { name: 'salle', src: '04-photos-originales/salle-originale.png', rev: 1, widths: [720, 1040], crop: true },
+  { name: 'comptoir', src: '04-photos-originales/comptoir-original.png', rev: 1, widths: [480, 806], crop: true },
+  { name: 'terrasse', src: '04-photos-originales/facade-terrasse-originale.png', rev: 1, widths: [480, 806], crop: true },
+  { name: 'cave', src: '04-photos-originales/cave-originale.png', rev: 1, widths: [480, 810], crop: true },
 ];
 
 const manifest = {};
 
 async function variants(job) {
-  const meta = await sharp(kit(job.src)).metadata();
-  const entry = { w: meta.width, h: meta.height, widths: [], avif: [], webp: [] };
-  for (const w of job.widths.filter((w) => w <= meta.width)) {
+  const source = () => {
+    const img = sharp(kit(job.src));
+    return job.crop ? img.extract(rect(job.src)) : img;
+  };
+  const { info } = await source().toBuffer({ resolveWithObject: true });
+  const entry = { w: info.width, h: info.height, widths: [], avif: [], webp: [] };
+  for (const w of job.widths.filter((w) => w <= info.width)) {
     const base = `${job.name}-v${job.rev}-${w}`;
     const img = () => {
-      const base = sharp(kit(job.src));
-      return (job.tune ? job.tune(base) : base).resize({ width: w, withoutEnlargement: true });
+      const pipeline = source().resize({ width: w, withoutEnlargement: true });
+      return job.alpha ? pipeline : pipeline.removeAlpha();
     };
-    await img().avif({ quality: job.alpha ? 60 : 52, effort: 6 }).toFile(path.join(out, `${base}.avif`));
-    await img().webp({ quality: job.alpha ? 82 : 78, alphaQuality: 90, effort: 6 }).toFile(path.join(out, `${base}.webp`));
+    await img().avif({ quality: job.alpha ? 60 : 56, effort: 6 }).toFile(path.join(out, `${base}.avif`));
+    await img().webp({ quality: job.alpha ? 82 : 80, alphaQuality: 90, effort: 6 }).toFile(path.join(out, `${base}.webp`));
     entry.widths.push(w);
     entry.avif.push(`/img/${base}.avif`);
     entry.webp.push(`/img/${base}.webp`);
@@ -56,7 +60,7 @@ async function variants(job) {
 }
 
 async function logo() {
-  // Trim the transparent margin; the brand guide keeps 10% clear space in CSS instead.
+  // Trim the transparent margin; clear space is handled in CSS.
   const trimmed = await sharp(kit('01-identidade/logo-transparente.png')).trim({ threshold: 1 }).toBuffer();
   const meta = await sharp(trimmed).metadata();
   const entry = { w: meta.width, h: meta.height, png: [], webp: [], widths: [] };
@@ -70,27 +74,27 @@ async function logo() {
   }
   manifest.logo = entry;
 
-  // Icons: the badge on the header orange, so the white lettering keeps its contrast.
+  // Icons: the badge on graphite, like the header it sits in.
   const badge = async (size, pad) => {
     const inner = Math.round(size * (1 - pad * 2));
     const mark = await sharp(trimmed).resize({ width: inner, height: inner, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
-    return sharp({ create: { width: size, height: size, channels: 4, background: '#EF7A18' } })
+    return sharp({ create: { width: size, height: size, channels: 4, background: '#191918' } })
       .composite([{ input: mark, gravity: 'center' }])
       .png({ palette: true, quality: 92 });
   };
-  await (await badge(180, 0.06)).toFile(path.join(root, 'public/apple-touch-icon.png'));
-  await (await badge(512, 0.06)).toFile(path.join(root, 'public/icon-512.png'));
-  await (await badge(64, 0.02)).toFile(path.join(root, 'public/favicon.png'));
+  await (await badge(180, 0.08)).toFile(path.join(root, 'public/apple-touch-icon.png'));
+  await (await badge(512, 0.08)).toFile(path.join(root, 'public/icon-512.png'));
+  await (await badge(64, 0.03)).toFile(path.join(root, 'public/favicon.png'));
 }
 
 async function ogImage() {
   // 1200x630 share image: a capture of the built hero (assets-src/og.png, made after the site
-  // is built) when present, else the kit's approved 3:2 hero.
+  // is built) when present, else the landscape campaign.
   const captured = existsSync(kit('assets-src/og.png'));
   const img = captured
-    ? sharp(kit('assets-src/og.png')).resize({ width: 1200, height: 630, fit: 'cover', position: 'right' })
-    : sharp(kit('03-hero/hero-desktop.png')).resize({ width: 1200 }).extract({ left: 0, top: 70, width: 1200, height: 630 });
-  await img.jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(root, 'public/og-v2.jpg'));
+    ? sharp(kit('assets-src/og.png')).resize({ width: 1200, height: 630, fit: 'cover', position: 'left' })
+    : sharp(kit('03-hero/brinde-cinematographique.png')).resize({ width: 1200, height: 630, fit: 'cover', position: 'centre' });
+  await img.removeAlpha().jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(root, 'public/og-v3.jpg'));
 }
 
 if (existsSync(out)) await rm(out, { recursive: true });
@@ -99,4 +103,4 @@ for (const job of jobs) await variants(job);
 await logo();
 await ogImage();
 await writeFile(path.join(root, 'src/data/images.json'), JSON.stringify(manifest, null, 2) + '\n');
-console.log(Object.entries(manifest).map(([k, v]) => `${k}: ${(v.widths || []).join(',')}`).join('\n'));
+console.log(Object.entries(manifest).map(([k, v]) => `${k}: ${v.w}x${v.h} → ${(v.widths || []).join(',')}`).join('\n'));

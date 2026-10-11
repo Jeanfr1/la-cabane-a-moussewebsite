@@ -22,23 +22,3 @@ export function initReveal() {
   document.documentElement.classList.add('reveal-on');
   items.forEach((el) => io.observe(el));
 }
-
-// Gentle parallax for the cave collage: translate only, motion-safe.
-export function initDrift() {
-  const els = [...document.querySelectorAll('[data-drift]')];
-  if (!els.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let raf = 0;
-  const update = () => {
-    raf = 0;
-    const vh = innerHeight;
-    for (const el of els) {
-      const r = el.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) continue;
-      const offset = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.drift);
-      el.style.translate = `0 ${offset.toFixed(1)}px`;
-    }
-  };
-  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
-  addEventListener('resize', update);
-  update();
-}

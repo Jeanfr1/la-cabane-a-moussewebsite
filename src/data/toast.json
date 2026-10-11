@@ -1,0 +1,16 @@
+{
+  "source": "scripts/register-toast.py",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "scale": 0.81109,
+  "x": 16.7129,
+  "y": 8.7737,
+  "rotationDeg": 0.147,
+  "inliers": 515,
+  "residualPx": {
+    "median": 1.64,
+    "p90": 2.67
+  }
+}
