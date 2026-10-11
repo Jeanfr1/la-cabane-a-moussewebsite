@@ -1,6 +1,7 @@
 // Single source for every business fact on the page (rendered into the HTML at build time).
 // Sources: 07-integracao/dados.json + FONTES.md (PagesJaunes, Cirkwi, annuaire-entreprises, 11/10/2026).
-// TODO(cabane): confirm the Instagram URL and swap the map search for the Google place link (cid).
+// TODO(cabane): confirm the Instagram URL, add the Facebook page, swap the map search for the Google place
+// link (cid) and reconfirm the hours and any exceptional hours.
 export const site = {
   name: 'La Cabane à Mousse',
   fullName: 'La Cabane à Mousse Herbignac',

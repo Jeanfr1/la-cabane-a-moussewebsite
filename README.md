@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src=".github/assets/banner.png" alt="La Cabane à Mousse: Ça mousse. Ça vit." width="100%" />
+<img src=".github/assets/banner.png" alt="La Cabane à Mousse: Le goût d’être ensemble." width="100%" />
 
-<h3>A one-page website for a beer cellar & bar in Herbignac, built around a pour that crosses from one section into the next.</h3>
+<h3>A one-page website for a beer cellar & bar in Herbignac, opening on a toast that scrolls into the real bar.</h3>
 
 <p>
   <a href="https://la-cabane-a-mousse-herbignac.vercel.app"><strong>🌐 Live site</strong></a>
@@ -13,11 +13,11 @@
 </p>
 
 <p>
-  <a href="https://la-cabane-a-mousse-herbignac.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-1C1714?style=for-the-badge&logo=vercel&logoColor=white" alt="Live on Vercel" /></a>
+  <a href="https://la-cabane-a-mousse-herbignac.vercel.app"><img src="https://img.shields.io/badge/Vercel-Live-191918?style=for-the-badge&logo=vercel&logoColor=white" alt="Live on Vercel" /></a>
   <img src="https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 6" />
-  <img src="https://img.shields.io/badge/Scroll-requestAnimationFrame-EF7A18?style=for-the-badge" alt="Vanilla scroll engine" />
+  <img src="https://img.shields.io/badge/Scroll-requestAnimationFrame-F3B43F?style=for-the-badge" alt="Vanilla scroll engine" />
   <img src="https://img.shields.io/badge/JavaScript-ES2020-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/♿_Accessibility-first-BE3427?style=for-the-badge" alt="Accessibility first" />
+  <img src="https://img.shields.io/badge/♿_Accessibility-first-8A5F35?style=for-the-badge" alt="Accessibility first" />
 </p>
 
 </div>
@@ -26,14 +26,14 @@
 
 ## 🚀 Overview
 
-**La Cabane à Mousse** is a cave & bar à bières in Herbignac, in the Brière, that also hires out beer taps for events. The site opens in the bar itself (black walls, Edison lamps in wooden frames, Tolix stools) where a woman tips a giant bottle wearing the Cabane's label. As you scroll, **the beer leaves the bottle, crosses into the next section and lands in the open mouth of a friend waiting below**, the way the brief's reference image crosses its frame.
+**La Cabane à Mousse** is a cave & bar à bières in Herbignac, in the Brière, that also hires out beer taps for events. The site opens on a toast: three friends clink bottles wearing the Cabane's label under the headline **Le goût d’être ensemble.** As you scroll, the bar dissolves around the bottles, the camera moves in on the clink, and **a window opens from the centre onto the real room of the Cabane**, which leads into the rest of the page.
 
-The rest of the page follows the real place: the counter with its wooden sign, the cable-reel display of the cellar, and the anthracite facade with its crossed black slats for the address and opening hours. Colours come from the logo (honey, orange, banner red, foam, ink) plus the facade's slate. Every section leads to two actions: **call the Cabane** or **plan an event**.
+Everything after the hero is the real place: the counter with its wooden sign, the facade and its terrace of deckchairs, the cable-reel display of the cellar. The palette comes from the bar itself (graphite walls, black metal, wood, beer amber, the orange of the facade lettering, foam) and the type is a massive condensed face. Every section leads to one of two actions: **come by** or **call the Cabane**.
 
-- **A pour you can follow**: the fall happens while both the bottle and the mouth are on screen, at any scroll speed
-- **The real venue**: photos of the counter, the room, the cellar and the facade, cleaned up and enlarged from the owner's listing
-- **Built for every visitor**: no-JS and reduced-motion visitors get the full pour as a still, full keyboard support, visible focus, French copy as real text
-- **Light**: about 420 KB on a phone's first load, fonts included
+- **A three-chapter opening**: Le rendez-vous → Le tchin → La vraie Cabane, scrubbed by the scroll, never blocking it
+- **The real venue**: the four photos of the room, counter, facade and cellar, framed so the screenshot interface never shows
+- **Built for every visitor**: an animation switch, reduced-motion and no-JS visitors get the full static hero, keyboard menu with Escape, French copy as real text
+- **Light**: 225 KB on a phone's first load and 445 KB on desktop, fonts and images included; 2.3 KB of JavaScript (gzip)
 
 <br />
 
@@ -42,109 +42,110 @@ The rest of the page follows the real place: the counter with its wooden sign, t
 ## 🎬 The hero animation
 
 <div align="center">
-  <a href="https://la-cabane-a-mousse-herbignac.vercel.app"><img src=".github/assets/hero-scroll.gif" alt="Scrolling from the hero into the bar section: the beer pours from the bottle across the foam wave into the open mouth below" width="100%" /></a>
+  <a href="https://la-cabane-a-mousse-herbignac.vercel.app"><img src=".github/assets/hero-scroll.gif" alt="Scrolling through the hero: the friends toasting, the bar fading around the three bottles, the close-up, then the real room opening from the centre" width="100%" /></a>
   <sub>Scroll-scrubbed on the live site · captured at 1440 × 900</sub>
 </div>
 
 <br />
 
-Nothing is pinned: the page scrolls normally and the pour is timed from the live positions of the bottle and the mouth.
+The hero section is 190 % of the screen height (165 % on phones); its stage stays pinned under the header while the page scrolls normally.
 
-| Moment                          | What happens                                                                                  |
-| :------------------------------ | :-------------------------------------------------------------------------------------------- |
-| Page load                       | The bar room, the headline, both calls to action; a few drops escape the bottle neck          |
-| Neck at 60–75% of the screen    | The beer starts to fall and crosses the foam wave into **Le bar**                             |
-| Neck at 25–42%                  | The beer reaches the mouth while the mouth is still at ≤ 78% of the screen                    |
-| Contact                         | A burst of droplets and light at the mouth, then the stream keeps flowing with a moving shine |
-| Scrolling back up               | The pour rewinds and the drops come back                                                      |
+| Scroll progress | Chapter               | What happens                                                                                   |
+| :-------------- | :-------------------- | :--------------------------------------------------------------------------------------------- |
+| 0–18 %          | **Le rendez-vous**    | The toast, the headline and both calls to action; a slow push towards the clinking necks       |
+| 18–37 %         | Into the close-up     | The headline lifts away and the bar dissolves around the bottles, which stay exactly in place  |
+| 37–64 %         | **Le tchin**          | The three bottles alone on graphite, the camera moves in, a short amber glint where they touch |
+| 64–76 %         | The door opens        | The real room appears in a small window in the centre                                          |
+| 76–100 %        | **La vraie Cabane**   | The window opens to full screen and hands over to the sections                                 |
 
 **Under the hood**
 
-- 🧩 **One rig, two sections.** The kit ships the woman, the man and the isolated stream as cut-outs on one shared canvas. `scripts/measure-pour.py` places them in "rig units": the top of the stream sits in the bottle opening (+45, +55 from the woman), and the man is lowered until the end of the stream lands in his mouth. The rig lives in **Le bar** and reaches 900 units up into the hero, so the woman stands in the hero and the man in the next section.
-- 📏 **One length scales everything.** CSS computes `--u` (one rig unit) from the viewport: on wide screens from the hero height and the room left by the text column, on phones from the width. Every layer is positioned in `calc(n * var(--u))`.
-- 🎯 **Timed from geometry, tested at human speed.** `src/js/pour.js` maps the bottle neck's position on screen to the pour, so the fall always happens in view. A wheel-scroll test (16 ms cadence, easing on) checked every frame: the liquid's leading edge never left the screen, at ~750 and ~1,900 px/s, on desktop and phone.
-- 📷 **Real photos, enlarged.** The venue photos were only available inside the brief's screenshot board (~500 px). `scripts/prepare-real-photos.py` crops them, removes the Google Maps interface drawn over them and enlarges them 4× with Real-ESRGAN.
-- 🐢 **Graceful by default.** With `prefers-reduced-motion`, without JavaScript, or if the script hasn't started after 4 s, the full pour is shown as a still. `?p=0.5` freezes the pour for captures and `?nosmooth` turns off the easing.
+- 🎯 **The close-up is registered, not cross-faded.** The kit ships the three bottles as a separate transparent layer. `scripts/register-toast.py` matches it to the campaign photo with SIFT features and a RANSAC similarity transform (515 inliers, 1.6 px median error): the layer is the campaign's bottles at 1.233×. `src/js/hero.js` composes that transform with the campaign's own zoom, so the layer sits on the bottles while the bar fades out, then eases to the close-up framing. No second group of bottles ever shows.
+- 📐 **Image coordinates at every size.** Each layer lives in a box with the image's own aspect ratio that covers the stage, computed in CSS with container units (`max(100cqw, 100cqh * 1.5)`). Zoom origins, the glint and the registration are written in percentages of the image, so they hold from 1024 to 1920 px wide.
+- 🧮 **One function, one frame.** `motionAt(p)` (the ranges of the kit's study) returns every value for a progress `p`; a single pending `requestAnimationFrame` writes them as custom properties on the hero. Progress comes from the sticky offset and the stage's own height, so it stays exact when a phone's address bar resizes the window.
+- 📱 **Phones get the portrait campaign.** Below 850 px the hero uses the portrait toast, keeps it on screen while it zooms, and skips the close-up layer entirely (its `<picture>` only has sources above 850 px, so phones never download it). The real room still opens at the end.
+- 🐢 **Motion is optional.** The **Désactiver l’animation** switch (remembered per visitor), `prefers-reduced-motion`, no JavaScript, or a script that hasn't started within 4 s all give the static hero with every action. `?p=0.5` freezes the progress for captures.
 
 <br />
 
 ## 🖥️ Sections
 
 <div align="center">
-  <img src=".github/assets/desktop-sections.jpg" alt="Desktop screenshots: the bar with the real counter, the cellar with the cable-reel display, tap hire, and the contact block on the facade's slats" width="100%" />
+  <img src=".github/assets/desktop-sections.jpg" alt="Desktop screenshots: the bar with the real counter, the cellar with its cable-reel display, tap hire in three steps, and the contact block with today's hours" width="100%" />
 </div>
 
 <br />
 
-| #   | Section                                   | Anchor          | Role                                                                          |
-| :-- | :---------------------------------------- | :-------------- | :---------------------------------------------------------------------------- |
-| 01  | **Ça mousse. Ça vit.**                    | `#top`          | The bar room, the promise, both calls to action and the woman tipping the bottle |
-| 02  | **Les bons moments commencent ici.**      | `#bar`          | The friend catching the beer, then the real counter and the campaign friends   |
-| 03  | **Une cave. Mille envies de découvrir.**  | `#cave`         | Orange chapter with the real cable-reel display and the labelled bottle splash |
-| 04  | **Vos événements prennent mousse.**       | `#evenements`   | Tap hire in three steps and a direct phone call; conditions confirmed by phone |
-| 05  | **La vie de la Cabane.**                  | `#rendez-vous`  | Points to Instagram, under two line-drawn pendant lamps from the bar room     |
-| 06  | **On vous garde une place à Herbignac.**  | `#nous-trouver` | The facade photo on its crossed slats, address, phone, hours with today highlighted, directions |
-| 07  | Footer                                    | n/a             | Details, site map and the French health warning                               |
+| #   | Section                                          | Anchor        | Role                                                                            |
+| :-- | :----------------------------------------------- | :------------ | :------------------------------------------------------------------------------ |
+| 01  | **Le goût d’être ensemble.**                     | `#accueil`    | The toast in three chapters, the headline, *Entrer dans la Cabane* and *Louer une tireuse* |
+| 02  | Signature band                                   | n/a           | La Cabane à Mousse ✳ Herbignac ✳ De bons moments, tout simplement.               |
+| 03  | **C’est ici que ça se passe.**                   | `#bar`        | The real counter in a tilted frame, then the facade and terrace with the address |
+| 04  | **Le goût de la découverte.**                    | `#cave`       | The cellar's cable-reel display; advice by phone, no stock or prices promised    |
+| 05  | **Votre fête. Notre mousse.**                    | `#tireuses`   | Tap hire in three steps (date, wishes, talk) and a direct call                  |
+| 06  | **On garde le contact.**                         | `#actualites` | News on Instagram; no past poster shown as a future event                       |
+| 07  | **À tout à l’heure.**                            | `#contact`    | Address and directions, phone, hours with today highlighted                     |
+| 08  | Footer                                           | n/a           | Details, site map and the French health warning                                 |
 
 <br />
 
 ## 📱 Mobile first, motion optional
 
 <div align="center">
-  <img src=".github/assets/mobile-screens.jpg" alt="Mobile screenshots: the hero with the woman, the pour landing in the bar section, the cellar and the contact block" width="100%" />
+  <img src=".github/assets/mobile-screens.jpg" alt="Mobile screenshots: the portrait toast hero, the real room at the end of the hero, the bar, the cellar and tap hire" width="100%" />
 </div>
 
 <br />
 
-- The text sits above the woman, the man waits right under the foam wave, and the pour runs top to bottom in a single column
-- Header with the logo, a call button and a full-screen menu (Escape closes it)
-- Every touch target is at least 44 px; no horizontal scroll at 360 or 390 px
+- The toast fills the top of the screen; title and actions sit on the dark counter below it
+- Header with the logo and a **Menu** button: full-height panel, `aria-expanded`, Escape closes it and returns focus
+- Every touch target is at least 44 px; no horizontal scroll at 320, 390 or 430 px
 - Nothing depends on hover
 
 <br />
 
 ## ✨ Highlights
 
-- **🍺 Scroll storytelling**: a small `requestAnimationFrame` engine drives one mask and a few classes; the drops, the splash and the shine are CSS
-- **🏠 The real place**: the facade's slats drawn as a seamless SVG pattern generated at build time, the bar's pendant lamps redrawn as line art, real photos in the bar, the cellar and the contact block
-- **📞 Contact without a form**: the brief allows no fake submission, so every action is a real `tel:` link or the directions
+- **🍻 Scroll storytelling**: zoom, dissolve, a registered close-up and a clip-path window, driven by one function and custom properties
+- **🏠 The real place**: the four venue photos are framed by the rectangles documented in the kit, so the screenshots' interface never shows and the masters stay untouched
+- **📞 Contact without a form**: every action is a real `tel:` link, the directions or Instagram
 - **🕘 Today's hours**: opening hours are rendered into the HTML at build time; a few lines of JS only highlight today's row (Paris time)
-- **♿ Accessible components**: skip link, labelled menu button with `aria-expanded`, the pour described as one image, honey never used as small text on cream
-- **🖼️ Image pipeline**: the kit's PNG masters stay untouched; `npm run images` writes versioned AVIF/WebP sizes, icons and the share image
-- **🔤 Lean type**: Fraunces is pinned to the one style the site uses (Black, soft) with its optical-size axis kept: 121 KB → 29 KB
+- **♿ Accessible components**: skip link, labelled menu button, a pressed-state animation switch, faded titles taken out of the tab order, focus rings in amber or ink depending on the background
+- **🖼️ Image pipeline**: `npm run images` writes versioned AVIF/WebP sizes, icons and the share image (itself a capture of the built hero)
+- **🔤 Lean type**: the kit's condensed face subset to Latin in WOFF2, 58 KB → 16 KB, its licence shipped next to it
 
 <br />
 
 ## 💻 Tech stack
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="40" height="40" /><br />Vite 6 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" /><br />JavaScript | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" /><br />HTML5 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" /><br />CSS3 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" height="40" /><br />OpenCV | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="40" height="40" /><br />PyTorch | <img src="https://cdn.simpleicons.org/vercel/000000/ffffff" width="40" height="40" /><br />Vercel |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="40" height="40" /><br />Vite 6 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" /><br />JavaScript | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" /><br />HTML5 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" /><br />CSS3 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" /><br />Python | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="40" height="40" /><br />OpenCV | <img src="https://cdn.simpleicons.org/vercel/000000/ffffff" width="40" height="40" /><br />Vercel |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ### Why this stack?
 
 - **Vite + plain JavaScript**: a one-page site doesn't need a framework runtime; the page is static HTML with three small modules
-- **Own scroll engine**: one rig with a handful of properties; a few lines of `requestAnimationFrame` replace a scroll library
-- **Python + OpenCV + PyTorch for the assets**: the rig is placed by measured offsets and the venue photos are enlarged with Real-ESRGAN, once, offline
-- **Self-hosted Fraunces, Barlow Condensed and Inter**: expressive display type without third-party font requests
+- **Own scroll engine**: one progress value and a dozen custom properties; a few lines of `requestAnimationFrame` replace a scroll library
+- **Python + OpenCV for the assets**: the close-up layer is registered on the campaign once, offline, and the result is a small JSON file the page reads
+- **Self-hosted fonts**: the kit's condensed face and Inter, without third-party font requests
 - **Vercel**: every push to `main` deploys automatically
 
 <br />
 
 ## 🎨 Design system
 
-| Token    | Value                                                                        | Use                                                  |
-| :------- | :--------------------------------------------------------------------------- | :--------------------------------------------------- |
-| Honey    | ![#FFC13C](https://img.shields.io/badge/%23FFC13C-FFC13C?style=flat-square) | Hero second line, primary buttons on dark, news band |
-| Orange   | ![#EF7A18](https://img.shields.io/badge/%23EF7A18-EF7A18?style=flat-square) | Header (like the facade lettering), cellar chapter   |
-| Red      | ![#BE3427](https://img.shields.io/badge/%23BE3427-BE3427?style=flat-square) | Tap-hire button, eyebrows on foam                    |
-| Foam     | ![#FFF3D5](https://img.shields.io/badge/%23FFF3D5-FFF3D5?style=flat-square) | Light sections, text on dark                         |
-| Ink      | ![#1C1714](https://img.shields.io/badge/%231C1714-1C1714?style=flat-square) | Text, dark buttons, footer                           |
-| Slate    | ![#2A2725](https://img.shields.io/badge/%232A2725-2A2725?style=flat-square) | Contact block, the facade's anthracite               |
+| Token    | Value                                                                        | Use                                                        |
+| :------- | :--------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| Graphite | ![#191918](https://img.shields.io/badge/%23191918-191918?style=flat-square) | Hero, header, contact and footer                           |
+| Charcoal | ![#292824](https://img.shields.io/badge/%23292824-292824?style=flat-square) | The cellar                                                 |
+| Wood     | ![#8A5F35](https://img.shields.io/badge/%238A5F35-8A5F35?style=flat-square) | Accent words and the street number on foam                 |
+| Beer     | ![#F3B43F](https://img.shields.io/badge/%23F3B43F-F3B43F?style=flat-square) | *Ensemble*, primary buttons, signature band, tap hire      |
+| Orange   | ![#E67F22](https://img.shields.io/badge/%23E67F22-E67F22?style=flat-square) | From the logo and the facade lettering; accent on dark only |
+| Foam     | ![#F5EBDD](https://img.shields.io/badge/%23F5EBDD-F5EBDD?style=flat-square) | The bar and news sections, text on dark                    |
 
-- **Palette**: the logo's colours plus the facade's slate; no green anywhere, as the brief asks
-- **Type**: Fraunces Black (soft) for headlines, 44–128 px in the hero and 40–76 px for sections; Barlow Condensed for labels and buttons; Inter for body text at 16–18.5 px
-- **Shapes**: beer waves with foam bubbles and torn-paper edges between chapters, the facade's crossed slats, the bar's pendant lamps, rounded photo windows
-- **Motion**: entrances of 26–40 px over 700–900 ms with a light stagger; a slow parallax on the overlapping photos; all off with reduced motion
+- **Contrast**: beer on graphite 9.6:1, wood on foam 4.7:1; foam is never used as text on beer (1.6:1)
+- **Type**: the condensed display face in capitals for every headline (54–158 px in the hero, 52–128 px for sections), Inter for text at 15–18 px and spaced capitals for labels
+- **Shapes**: square buttons and frames, a tilted photo frame for the counter, thin rules between steps and hours
+- **Motion**: entrances of 26 px over 800–900 ms with a light stagger; all off with reduced motion
 
 <br />
 
@@ -169,11 +170,10 @@ npm run build
 # Preview the production build  →  http://localhost:4188
 npm run preview
 
-# Rebuild the generated assets (Python 3 with OpenCV; PyTorch for the photos)
-npm run photos -- RealESRGAN_x4plus.pth   # needs the brief's 00-referencias/ and the Real-ESRGAN weights
-npm run measure
-npm run images
-npm run fonts                             # fonttools + brotli
+# Rebuild the generated assets
+npm run images                        # sharp: kit masters → AVIF/WebP, icons, share image
+npm run fonts                         # fonttools + brotli
+python3 scripts/register-toast.py     # opencv-python: writes src/data/toast.json (--check for an overlay)
 ```
 
 <br />
@@ -182,28 +182,26 @@ npm run fonts                             # fonttools + brotli
 
 ```
 la-cabane-a-moussewebsite/
-├── index.html                  # Every section: hero → bar → cave → événements → rendez-vous → nous trouver → footer
-├── vite.config.js              # Renders facts, <x-pic> pictures, rig positions and the slat pattern into the HTML
+├── index.html                  # Every section: hero → bar/terrasse → cave → tireuses → actualités → contact → footer
+├── vite.config.js              # Renders facts and <x-pic> pictures (art-directed, desktop-only) into the HTML
 ├── src/
 │   ├── main.js                 # Entry: fonts, styles, module init
 │   ├── data/
 │   │   ├── site.js             # Name, phone, address, hours, links, structured data (single source)
-│   │   ├── pour.json           # Rig geometry: layers, neck, mouth, stream span (generated)
+│   │   ├── toast.json          # Close-up registration on the campaign (generated)
 │   │   └── images.json         # Image manifest (generated)
-│   ├── styles/                 # base.css (tokens, header) · hero.css (hero + rig) · sections.css
+│   ├── styles/                 # base.css (tokens, type, header) · hero.css (three chapters) · sections.css
 │   └── js/
-│       ├── pour.js             # Scroll position → pour, drops, contact, shine
-│       ├── reveal.js           # Entrance animations and photo parallax
-│       └── nav.js              # Mobile menu, compact logo, today's hours
+│       ├── hero.js             # motionAt(p), scroll → custom properties, animation switch
+│       ├── reveal.js           # Entrance animations
+│       └── nav.js              # Mobile menu, today's hours
 ├── scripts/
-│   ├── measure-pour.py         # Places the cut-outs, softens their crops, writes pour.json
-│   ├── prepare-real-photos.py  # Venue photos from the brief's board: crop, clean, enlarge
-│   ├── upscale.py              # Real-ESRGAN x4plus (RRDBNet) runner
-│   ├── build-images.mjs        # Masters → AVIF/WebP, icons, share image (sharp)
-│   └── subset-fonts.py         # Fraunces instance + subset
-├── public/                     # Generated images, font, favicons, Open Graph image
-├── assets-src/                 # Rig layers and cleaned venue photos (generated)
-└── 01-identidade … 08-estudo/  # The creative kit (brief, mockups, masters, scripts), kept as delivered
+│   ├── register-toast.py       # SIFT + RANSAC similarity: close-up layer → campaign
+│   ├── build-images.mjs        # Masters → framed, resized AVIF/WebP, icons, share image (sharp)
+│   └── subset-fonts.py         # Condensed face → Latin WOFF2 + licence
+├── public/                     # Generated images, fonts and licence, favicons, Open Graph image
+├── assets-src/og.png           # Capture of the built hero for the share image
+└── 01-identidade … 08-estudo/  # The creative kit V3 (direction, masters, scripts, study), kept as delivered
 ```
 
 <br />
@@ -228,31 +226,30 @@ The creative kit folders are excluded from the deployment by `.vercelignore`.
 
 Items waiting on the owner. Each one is marked `TODO(cabane)` in `index.html` or `src/data/site.js`.
 
-- [ ] The room photo (hero) and the counter photo come from Google Maps visitors: replace them with the owner's own photos, or confirm the rights
-- [ ] Original, full-resolution files of the facade and cellar photos (the site uses enlarged crops from screenshots)
+- [ ] Full-resolution originals of the four venue photos (the site frames screenshots); the room and counter photos come from Google Maps visitors, so replace them or confirm the rights
+- [ ] The official logo master (the site uses the reconstruction from the kit)
 - [ ] Confirm the Instagram link and add the Facebook page (the exact URL wasn't in the brief)
 - [ ] Replace the directions link (an address search) with the Cabane's own Google Maps place
 - [ ] Reconfirm opening hours and any exceptional hours
-- [ ] Tap-hire conditions: equipment, capacity, deposit, delivery and prices (handled by phone until then)
-- [ ] A curated agenda with verified future dates for **La vie de la Cabane**
+- [ ] Tap-hire conditions: equipment, availability, prices, deposit, delivery, cleaning and booking (handled by phone until then)
+- [ ] A curated agenda with verified future dates for **On garde le contact**
 - [ ] Mentions légales (publisher, SIRET, host)
 - [ ] Final domain (then update `canonical` and `og:url` and remove `noindex`)
 
-Choices made where the brief and the owner's feedback pulled in different directions:
+Choices made where the kit left room for interpretation:
 
-- The kit's sunset-beach art direction was replaced by the real bar (room, counter, cellar, facade), at the owner's request, although the brief advised against dark interiors
-- The pour follows the reference image (it crosses from the hero into the next section) rather than the kit's single-frame reveal; the kit's own cut-outs made that possible
-- The French copy file is canonical; text painted into the mockups was not reused
-- The cellar keeps the brief's creative title but never states a number of references
+- The kit describes the close-up layer as an independent shot to cross-fade; measured, it is the campaign's bottles at 1.233×, so it is placed on them and the bar dissolves around them instead of showing two groups of bottles
+- The kit asks to remove a "previous green palette"; the V2 site had none, so the previous honey/orange/red tokens were replaced entirely
+- Where the study and the mockups differ, the mockups set the look (amber cellar title and button, graphite contact block) and the study sets the behaviour
+- The hire title stays ink on beer for both lines: foam on beer would fall to 1.6:1
 
 <br />
 
 ## 🙏 Acknowledgments
 
 - **La Cabane à Mousse** for the logo, the photos of the venue and the brief
-- **[Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)** by Xintao Wang et al. (BSD-3-Clause) for the photo enlargement
-- **[Fraunces](https://fonts.google.com/specimen/Fraunces)** by Undercase Type, **[Barlow](https://fonts.google.com/specimen/Barlow+Condensed)** by Jeremy Tribby and **[Inter](https://rsms.me/inter/)** by Rasmus Andersson (OFL)
-- **[OpenCV](https://github.com/opencv/opencv)** and **[sharp](https://sharp.pixelplumbing.com)** for the measurement and image pipelines
+- **Nimbus Sans Narrow** by URW++ (AGPL-3 with font exception, licence in `public/fonts/`) and **[Inter](https://rsms.me/inter/)** by Rasmus Andersson (OFL)
+- **[OpenCV](https://github.com/opencv/opencv)** and **[sharp](https://sharp.pixelplumbing.com)** for the registration and image pipelines
 - **[Vite](https://vite.dev)** and **[Vercel](https://vercel.com)**
 
 <br />
@@ -261,7 +258,7 @@ Choices made where the brief and the owner's feedback pulled in different direct
 
 <div align="center">
   <img src="public/favicon.png" width="44" height="44" alt="" />
-  <p><strong>Ça mousse. Ça vit.</strong></p>
+  <p><strong>Le goût d’être ensemble.</strong></p>
   <p>Built with ❤️ by <a href="https://github.com/Jeanfr1">Jean</a> for La Cabane à Mousse</p>
-  <sub>L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</sub>
+  <sub>L’abus d’alcool est dangereux pour la santé. À consommer avec modération.</sub>
 </div>
